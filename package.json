@@ -1,10 +1,5 @@
 {
   "license": "MIT",
-  "author": {
-    "name": "Serif Colakel",
-    "email": "serifcolakel0@gmail.com"
-  },
-  "description": "UI Components with React & Typescript with TailwindCSS",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
@@ -24,14 +19,13 @@
     "access": "public"
   },
   "readme": "README.md",
-  "name": "serif-ui-components",
+  "name": "DP",
   "private": false,
-  "version": "0.0.14",
+  "version": "0.0.1",
   "type": "module",
   "keywords": [
     "react",
     "typescript",
-    "tailwindcss",
     "ui",
     "components",
     "chromatic",
@@ -40,19 +34,16 @@
     "vite-plugin-dts",
     "vitest",
     "eslint",
-    "prettier",
-    "husky"
+    "prettier"
   ],
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --force",
     "release": "bash ./scripts/release.sh",
-    "build": "tsc && vite build && npm run tailwind",
-    "tailwind": "npx tailwindcss -o ./dist/index.css --minify",
+    "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest",
     "test:run": "vitest --run",
-    "prepare": "husky install",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
@@ -63,9 +54,13 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
-    "tailwind-merge": "^1.13.2"
+    "react-router-dom": "^6.22.1"
   },
   "devDependencies": {
+    "@data-driven-forms/common": "3.22.2",
+    "@data-driven-forms/react-form-renderer": "3.22.2",
+    "@elgorditosalsero/react-gtm-hook": "^2.6.0",
+    "@jest/globals": "^29.7.0",
     "@storybook/addon-essentials": "^7.0.27",
     "@storybook/addon-interactions": "^7.0.27",
     "@storybook/addon-links": "^7.0.27",
@@ -74,16 +69,27 @@
     "@storybook/react": "^7.0.27",
     "@storybook/react-vite": "^7.0.27",
     "@storybook/testing-library": "^0.0.14-next.2",
-    "@tailwindcss/forms": "^0.5.4",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
+    "@tippyjs/react": "^4.2.6",
+    "@types/draft-js": "^0.11.9",
     "@types/react": "^18.2.14",
+    "@types/react-datepicker": "^4.10.0",
     "@types/react-dom": "^18.2.6",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.0.1",
+    "@xstyled/core": "3.6.0",
+    "@xstyled/emotion": "3.6.0",
+    "@xstyled/system": "3.6.0",
+    "@xstyled/util": "3.5.1",
+    "anolis-ui": "^0.3.4",
     "autoprefixer": "^10.4.14",
     "chromatic": "^6.19.9",
+    "date-fns": "^2.29.3",
+    "deep-object-diff": "^1.1.9",
+    "draft-js": "^0.11.7",
+    "draft-js-export-html": "^1.4.1",
     "eslint": "^8.45.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",
@@ -95,21 +101,27 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.1",
     "eslint-plugin-storybook": "^0.6.12",
-    "husky": "^8.0.0",
+    "framer-motion": "^10.6.1",
+    "html-react-parser": "^2.0.0",
     "jsdom": "^22.1.0",
     "lint-staged": "^13.2.3",
     "postcss": "^8.4.26",
     "prettier": "^3.0.0",
     "prop-types": "^15.8.1",
+    "react-datepicker": "^4.8.0",
+    "react-final-form-listeners": "^1.0.3",
+    "react-loading-skeleton": "^3.1.0",
+    "react-number-format": "^5.2.2",
+    "react-select": "^5.4.0",
     "storybook": "^7.0.27",
-    "tailwindcss": "^3.3.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.0",
     "vite-plugin-dts": "^3.3.0",
-    "vitest": "^0.33.0"
+    "vite-plugin-svgr": "^4.2.0",
+    "vitest": "^0.33.0",
+    "zustand": "^4.4.1"
   },
-  "bugs": {
-    "url": "https://github.com/serifcolakel/serif-ui-components/issues"
-  },
-  "homepage": "https://github.com/serifcolakel/serif-ui-components#readme"
+  "resolutions": {
+    "jackspeak": "2.1.1"
+  }
 }

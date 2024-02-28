@@ -1,0 +1,58 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+import DataDrivenForm from "@src/index";
+import { StorybookProviderDecorator } from "@src/StorybookProviderDecorator";
+import MaskedPatternField from "@src/components/fields/MaskedPatternField";
+import { getFieldWrapper } from "@src/stories/getFieldWrapper";
+
+<Meta
+  title="Fields / Masked pattern Field"
+  component={DataDrivenForm}
+  decorators={[StorybookProviderDecorator]}
+  tags={["autodocs"]}
+  argTypes={{
+    label: { control: "text" },
+    helper: { control: "text" },
+    initialValue: { control: "text" },
+    format: { control: "text" },
+    patternType: { control: "text" },
+    allowEmptyFormatting: { control: "boolean" },
+  }}
+/>
+
+<Canvas>
+  <Story
+    name="Masked pattern Field"
+    args={{
+      label: "Telefonní číslo",
+      helper: "Helper",
+      initialValue: "+420",
+      format: '+### ### ### ###',
+      allowEmptyFormatting: true,
+      patternType: 'phone',
+    }}
+  >
+    {(args) => (
+      <DataDrivenForm
+        schema={getFieldWrapper({
+          title: "Masked pattern Field",
+          sectionContent: [
+            {
+              component: "masked-pattern-field",
+              name: "storybook.maskedPatternField",
+              helper: args.helper,
+              label: args.label,
+              initialValue: args.initialValue,
+              format: args.format,
+              allowEmptyFormatting: args.allowEmptyFormatting,
+              patternType: args.patternType
+            },
+          ],
+        })}
+      />
+    )}
+  </Story>
+</Canvas>
+
+## Component Props
+
+<ArgsTable of={MaskedPatternField} />

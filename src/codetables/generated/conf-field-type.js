@@ -1,0 +1,66 @@
+"use strict";
+export const confFieldType = [
+    {
+        code: 'CHECKBOX',
+        langDescription: 'Check-box',
+        orderColumn: 4,
+        availableOnFe: true,
+        isDefault: false,
+    },
+    {
+        code: 'RADIO',
+        langDescription: 'Přepínač',
+        orderColumn: 5,
+        availableOnFe: true,
+        isDefault: false,
+    },
+    {
+        code: 'STANDARD',
+        langDescription: 'Běžné pole',
+        orderColumn: 1,
+        availableOnFe: true,
+        isDefault: true,
+    },
+    {
+        code: 'DATE',
+        langDescription: 'Datum bez kalendáře',
+        orderColumn: 6,
+        availableOnFe: true,
+        isDefault: false,
+    },
+    {
+        code: 'CALENDAR',
+        langDescription: 'Datum s kalendářem',
+        orderColumn: 7,
+        availableOnFe: true,
+        isDefault: false,
+    },
+    {
+        code: 'LISTBOX_VALUES',
+        langDescription: 'Seznam (hodnoty)',
+        orderColumn: 3,
+        availableOnFe: true,
+        isDefault: false,
+    },
+    {
+        code: 'LISTBOX',
+        langDescription: 'Seznam (popisky)',
+        orderColumn: 2,
+        availableOnFe: true,
+        isDefault: false,
+    },
+    {
+        code: 'MULTISELECTION',
+        langDescription: 'Pole',
+        orderColumn: 9,
+        availableOnFe: true,
+        isDefault: false,
+    },
+    {
+        code: 'INLINE',
+        langDescription: 'Text bez pole',
+        orderColumn: 8,
+        availableOnFe: true,
+        isDefault: false,
+    },
+];

@@ -1,0 +1,96 @@
+                    {
+                      component: "card-checkbox",
+                      label: "Havarijní pojištění",
+                      name: "gudbai",
+                      fields: [
+                        {
+                          component: "grid",
+                          name: getRandomId(),
+                          css: { padding: "0 24px", gridTemplateColumns: "1fr 1.4fr", gap: "1rem" },
+                          fields: [
+                            {
+                              component: "text-field",
+                              name: "vehicleValue",
+                              label: "Hodnota vozidla",
+                              isRequired: true
+                            },
+                            {
+                              component: "select-field",
+                              name: "spoluUcast",
+                              label: "Spoluúčast",
+                              options: [{ label: "5% min. 5 000 Kč", value: "5percent" }]
+                            }
+                          ]
+                        },
+                        {
+                          component: "edit-field",
+                          label: "Havarijko na kupní cenu vozidla",
+                          name: "nejm",
+                          price: 10000,
+                          helper:
+                            '{"blocks":[{"key":"cssu2","text":"Jak si správně nastavit limit pojištění?","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[{"offset":0,"length":15,"key":0}],"data":{}}],"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"url":"#modal=fuelTypeCode","targetOption":"_self"}}}}',
+                          fields: [
+                            {
+                              component: "radio-info-container",
+                              name: "testPojisteni1",
+                              options: [
+                                {
+                                  component: "radio-with-info-field",
+                                  name: "bbb",
+                                  showHelperWhenChecked: false,
+                                  label: "Havarijko na kupní cenu nového vozidla",
+                                  price: 2000,
+                                  isRequired: true,
+                                  value: "havarijkoNove",
+                                  helper:
+                                    '{"blocks":[{"key":"cssu2","text":"Jak to myslíme?","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[{"offset":0,"length":15,"key":0}],"data":{}}],"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"url":"#modal=fuelTypeCode","targetOption":"_self"}}}}',
+                                  validate: [{ type: "required", message: "Prosím vyberte" }],
+                                  fields: [
+                                    {
+                                      component: "radio-info-list",
+                                      description: "Pojištěná rizika na hodnotu vozidla:",
+                                      info: [
+                                        "Dopravní nehoda",
+                                        "Střet a poškození zvířaty",
+                                        "Odcizení a vandalismus",
+                                        "Přírodní nebezpečí"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  component: "radio-with-info-field",
+                                  name: "aaa",
+                                  showHelperWhenChecked: true,
+                                  label: "Havarijko si sestavím sám",
+                                  price: 10000,
+                                  isRequired: true,
+                                  value: "havarijkoSam",
+                                  helper:
+                                    '{"blocks":[{"key":"cssu2","text":"Jak to myslíme?","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[{"offset":0,"length":15,"key":0}],"data":{}}],"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"url":"#modal=fuelTypeCode","targetOption":"_self"}}}}',
+                                  validate: [{ type: "required", message: "Prosím vyberte" }],
+                                  fields: [
+                                    {
+                                      component: "select-field",
+                                      name: "dopravniNehoda",
+                                      label: "Dopravní nehoda",
+                                      options: [{ label: "5% min. 5 000 Kč", value: "5percent" }],
+                                      helper:
+                                        '{"blocks":[{"key":"cssu2","text":"Jak to myslíme?","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[{"offset":0,"length":15,"key":0}],"data":{}}],"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"url":"#modal=fuelTypeCode","targetOption":"_self"}}}}'
+                                    },
+                                    {
+                                      component: "select-field",
+                                      name: "stretAZvirata",
+                                      label: "Střet a poškození zvířaty",
+                                      options: [{ label: "5% min. 5 000 Kč", value: "5percent" }],
+                                      helper:
+                                        '{"blocks":[{"key":"cssu2","text":"Jak to myslíme?","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[{"offset":0,"length":15,"key":0}],"data":{}}],"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"url":"#modal=fuelTypeCode","targetOption":"_self"}}}}'
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },

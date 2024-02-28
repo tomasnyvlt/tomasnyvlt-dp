@@ -1,0 +1,48 @@
+"use strict";
+export const coreCcEnumerationsVehicleSecurityLevel = [
+    {
+        code: 'NO_SECURITY',
+        langDescription: 'Bez zabezpečení',
+        orderBy: 1,
+        apiName: 'security-level',
+        product: 'vehicle',
+        erased: false,
+        createdAt: '2020-02-07T15:01:51.401109',
+    },
+    {
+        code: 'INTEGRAL_MECHANICAL_SECURITY',
+        langDescription: 'Mechanické zabezpečení',
+        orderBy: 3,
+        apiName: 'security-level',
+        product: 'vehicle',
+        erased: false,
+        createdAt: '2020-02-07T15:01:51.401109',
+    },
+    {
+        code: 'VIN_ETCHING',
+        langDescription: 'Označení skel',
+        orderBy: 2,
+        apiName: 'security-level',
+        product: 'vehicle',
+        erased: false,
+        createdAt: '2020-02-07T15:01:51.401109',
+    },
+    {
+        code: 'ACTIVE_SEARCH_SYSTEM',
+        langDescription: 'Systém aktivního vyhledávání',
+        orderBy: 4,
+        apiName: 'security-level',
+        product: 'vehicle',
+        erased: false,
+        createdAt: '2020-02-07T15:01:51.401109',
+    },
+    {
+        code: 'PASIVE_SEARCH_SYSTEM',
+        langDescription: 'Systém pasivního vyhledávání',
+        orderBy: 5,
+        apiName: 'security-level',
+        product: 'vehicle',
+        erased: false,
+        createdAt: '2020-02-07T15:01:51.401109',
+    },
+];

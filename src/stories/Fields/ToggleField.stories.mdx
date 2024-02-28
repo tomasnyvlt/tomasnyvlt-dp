@@ -1,0 +1,57 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+import DataDrivenForm from "@src/index";
+import { StorybookProviderDecorator } from "@src/StorybookProviderDecorator";
+import ToggleField from "@src/components/fields/ToggleField";
+import { getFieldWrapper } from "@src/stories/getFieldWrapper";
+
+<Meta
+  title="Fields / ToggleField"
+  component={DataDrivenForm}
+  decorators={[StorybookProviderDecorator]}
+  tags={["autodocs"]}
+  argTypes={{
+    label: { control: "text" },
+    options: { control: '' },
+    initialValue: {control: "text"}
+  }}
+/>
+
+<Canvas>
+  <Story
+    name="ToggleField"
+    args={{
+      label: "Label",
+      options: [
+        {
+          value: 1,
+          label: 'VIN',
+        },
+        {
+          value: 0,
+          label: 'Evid. číslo',
+        },
+      ],
+      initialValue: "1"
+    }}
+  >
+    {(args) => (
+      <DataDrivenForm
+        schema={getFieldWrapper({
+          title: "ToggleField",
+          sectionContent: [
+            {
+              component: "toggle-field",
+              name: "storybook.toggleField",
+              options: args.options,
+              initialValue: args.initialValue
+            },
+          ],
+        })}
+      />
+    )}
+  </Story>
+</Canvas>
+
+## Component Props
+
+<ArgsTable of={ToggleField} />

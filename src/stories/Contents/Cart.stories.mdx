@@ -1,0 +1,100 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+import DataDrivenForm from "@src/index";
+import { StorybookProviderDecorator } from "@src/StorybookProviderDecorator";
+import Cart from "@src/components/contents/Cart";
+
+<Meta
+  title="Contents / Cart"
+  component={DataDrivenForm}
+  decorators={[StorybookProviderDecorator]}
+  tags={["autodocs"]}
+  argTypes={{
+    label: { control: "text" },
+  }}
+/>
+
+<Canvas>
+  <Story
+    name="Cart"
+    args={{
+      label: "Obchodní sleva na povinné ručení",
+    }}
+  >
+    {(args) => {
+        const schema = {
+          fields: [
+            {
+              component: 'wizard',
+              name: 'customWizard',
+              formType: 'autosjednavac',
+              cart: {
+                activeOnSteps: [0],
+                name: "a",
+                cartFields: [
+                  {
+                    component: 'checkbox-field',
+                    name: "storybook.cark",
+                    label: JSON.stringify({
+                      blocks: [
+                        {
+                          key: 'bqubj',
+                          text: 'Garance ceny pojištění na 3 roky',
+                          type: 'unstyled',
+                          depth: 0,
+                          inlineStyleRanges: [],
+                          entityRanges: [],
+                          data: {},
+                        },
+                      ],
+                      entityMap: {},
+                    }),
+                    variant: 'cart',
+                    priceFetcherDataAttr: 'additionals.premiumWarranty.price',
+                    initialValue: false,
+                    helper:
+                      '{"blocks":[{"key":"bqubj","text":"Co myslíme garancí ceny?","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[{"offset":0,"length":24,"key":0}],"data":{}}],"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"url":"#modal=garance-ceny","targetOption":"_self"}}}}',
+                    helperCss: {
+                      color: 'grayscale.gray1',
+                      border: 0,
+                      textDecoration: 'underline',
+                      fontWeight: '400',
+                    },
+                  }
+                ]
+              },
+              fields: [
+                {
+                  component: 'step',
+                  name: 'step-1',
+                  title: 'Košík',
+                  fields: [
+                    {
+                      component: 'section',
+                      name: 'ASD',
+                      css: {
+                        mt: '3rem',
+                        h: '20rem'
+                      },
+                      fields: [
+
+                      ],
+                    },
+                  ],
+                },
+              ],
+            }
+          ]
+      }
+
+      return (
+        <DataDrivenForm
+          schema={schema}
+        />
+      )
+    }}
+  </Story>
+</Canvas>
+
+## Component Props
+
+<ArgsTable of={Cart} />

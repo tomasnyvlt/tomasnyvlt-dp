@@ -1,0 +1,73 @@
+"use strict";
+export const confMeasureUnit = [
+    {
+        code: 'CCM',
+        langDescription: 'ccm',
+        orderColumn: 1,
+        availableOnFe: true,
+        isDefault: false,
+    },
+    {
+        code: 'DAYS',
+        langDescription: 'dní',
+        orderColumn: 12,
+        availableOnFe: true,
+        isDefault: false,
+    },
+    {
+        code: 'KG',
+        langDescription: 'kg',
+        orderColumn: 3,
+        availableOnFe: true,
+        isDefault: false,
+    },
+    {
+        code: 'KM',
+        langDescription: 'km',
+        orderColumn: 4,
+        availableOnFe: true,
+        isDefault: false,
+    },
+    {
+        code: 'KW',
+        langDescription: 'kW',
+        orderColumn: 5,
+        availableOnFe: true,
+        isDefault: false,
+    },
+    {
+        code: 'MONTHS',
+        langDescription: 'měs.',
+        orderColumn: 11,
+        availableOnFe: true,
+        isDefault: false,
+    },
+    {
+        code: 'PERCENTAGE',
+        langDescription: '%',
+        orderColumn: 7,
+        availableOnFe: true,
+        isDefault: false,
+    },
+    {
+        code: 'PERMILLE',
+        langDescription: '‱',
+        orderColumn: 8,
+        availableOnFe: true,
+        isDefault: false,
+    },
+    {
+        code: 'SYS_CURRENCY',
+        langDescription: 'Kč',
+        orderColumn: 9,
+        availableOnFe: true,
+        isDefault: false,
+    },
+    {
+        code: 'YEARS',
+        langDescription: 'let',
+        orderColumn: 10,
+        availableOnFe: true,
+        isDefault: false,
+    },
+];

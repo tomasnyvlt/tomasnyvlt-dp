@@ -3,6 +3,7 @@ import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
 import path from 'path';
+import svgr from 'vite-plugin-svgr';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,10 +15,13 @@ export default defineConfig({
     setupFiles: ['./src/setupTests.ts'],
     environment: 'jsdom',
   },
+  define: {
+    global: {},
+  },
   build: {
     lib: {
       entry: path.resolve(__dirname, 'index.ts'),
-      name: 'serif-ui-components',
+      name: 'DP',
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
@@ -32,5 +36,18 @@ export default defineConfig({
     sourcemap: true,
     emptyOutDir: true,
   },
-  plugins: [react(), dts()],
+  plugins: [
+    react({
+      jsxRuntime: 'automatic', // Add this line
+    }),
+    svgr({
+      //include: '**/*.svg?react',
+    }),
+    dts(),
+  ],
+  resolve: {
+    alias: {
+      '@src/': '/src/',
+    },
+  },
 });

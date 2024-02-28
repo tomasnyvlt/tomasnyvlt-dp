@@ -1,0 +1,5 @@
+                {
+                  component: "radio-container",
+                  name: "Radiocontainer",
+                  options: [{ component: "radio-frequency-button", label: "rocne", value: "yearly", price: "2222 Kč" },{ component: "radio-frequency-button", label: "mesicne", value: "monthly", price: "1122 Kč" }]
+                },
