@@ -1,0 +1,63 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+import DataDrivenForm from "@src/index";
+import { StorybookProviderDecorator } from "@src/StorybookProviderDecorator";
+import CardPerson from "@src/components/contents/CardPerson";
+import { getFieldWrapper } from "@src/stories/getFieldWrapper";
+
+<Meta
+  title="Contents / CardPerson"
+  component={DataDrivenForm}
+  decorators={[StorybookProviderDecorator]}
+  tags={["autodocs"]}
+/>
+
+<Canvas>
+  <Story
+    name="Card person"
+    args={{
+      tags: [
+        'Pojistník',
+      ],
+      person: {
+        namePrefix: "Ing.",
+        firstName: "Franta",
+        lastName: "Vomáčka",
+      },
+      items: [
+        { label: "Číslo smlouvy:", value: 123456 },
+        { label: "Datum narození:", value: "12. 2. 2000" },
+        {
+          label: "Rodné číslo:",
+          value: "912212/2131"
+        },
+        {
+          label: "Kontaktní adresa:",
+          value: `Ambrožova 12, Aš, 130 00`
+        },
+        { label: "Telefon:", value: "+420 123 456 789" },
+        { label: "E-mail:", value: "email@email.com" }
+      ]
+    }}
+  >
+    {(args) => (
+      <DataDrivenForm
+        schema={getFieldWrapper({
+          title: "Karta osoby",
+          sectionContent: [
+            {
+              component: "card-person",
+              name: "storybook.cardPerson",
+              tags: args.tags,
+              person: args.person,
+              items: args.items
+            },
+          ],
+        })}
+      />
+    )}
+  </Story>
+</Canvas>
+
+## Component Props
+
+<ArgsTable of={CardPerson} />

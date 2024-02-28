@@ -1,0 +1,83 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+import DataDrivenForm from "@src/index";
+import { StorybookProviderDecorator } from "@src/StorybookProviderDecorator";
+import CardCheckbox from "@src/components/contents/CardCheckbox/CardCheckbox";
+import { getFieldWrapper } from "@src/stories/getFieldWrapper";
+
+<Meta
+  title="Contents / CardCheckbox"
+  component={DataDrivenForm}
+  decorators={[StorybookProviderDecorator]}
+  tags={["autodocs"]}
+/>
+
+<Canvas>
+  <Story
+    name="CardCheckbox"
+    args={{
+      label: "Povinné ručení",
+      initialValue: true,
+      helper:
+        '{"blocks":[{"key":"bqubj","text":"Jak si správně nastavit limit pojištění?","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[{"offset":0,"length":40,"key":0}],"data":{}}],"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"url":"#modal=jak-nastavit-limit-pojisteni","targetOption":"_self"}}}}',
+      price: 1000,
+      priceShortTerm: true,
+      defaultSalesDiscount: 0.5,
+      editMode: false,
+      isDisabled: false,
+      isPriceLoading: false,
+      fields: [
+        {
+          component: 'radio-select-container',
+          label: 'Nastavte si limit',
+          initialValue: '100',
+          name: 'mtpl.basicLimit',
+          options: [],
+          resolveProps: () => {
+            return {
+              options: [
+                {
+                  label: "100 mil.",
+                  value: 111,
+                  price: "1111 Kč / rok",
+                },
+                {
+                  label: "200 mil.",
+                  value: 1121,
+                  price: "11211 Kč / rok",
+                }
+              ]
+            };
+          },
+        },
+      ],
+    }}
+  >
+    {(args) => (
+      <DataDrivenForm
+        schema={getFieldWrapper({
+          title: "CardCheckbox",
+          sectionContent: [
+            {
+              component: 'card-checkbox',
+              label: args.label,
+              name: 'storybookmtpl.selected',
+              initialValue: args.initialValue,
+              helper: args.helper,
+              price: args.price,
+              priceShortTerm: args.priceShortTerm,
+              defaultSalesDiscount: args.defaultSalesDiscount,
+              editMode: args.editMode,
+              isDisabled: args.isDisabled,
+              isPriceLoading: args.isPriceLoading,
+              fields: args.fields
+            },
+          ],
+        })}
+      />
+    )}
+  </Story>
+</Canvas>
+
+## Component Props
+
+<ArgsTable of={CardCheckbox} />
