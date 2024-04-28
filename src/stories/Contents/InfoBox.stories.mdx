@@ -1,14 +1,19 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
 import DataDrivenForm from '@src/index';
 import { StorybookProviderDecorator } from '@src/StorybookProviderDecorator';
+<<<<<<< HEAD
 import InfoBox from '@src/components/contents/InfoBox';
 import { getFieldWrapper } from "@src/stories/getFieldWrapper";
+=======
+import Heading from '@src/components/contents/Heading';
+>>>>>>> 846b0c16 (RELEASE (serif) : new release v0.0.2)
 
 <Meta
   title="Contents / InfoBox"
   component={DataDrivenForm}
   decorators={[StorybookProviderDecorator]}
   tags={['autodocs']}
+<<<<<<< HEAD
   argTypes={{
       variant: { control: "select", options: ["info", "gradient", "clear", "infoNoBorder", "error", "notice", "success"] },
     }}
@@ -36,10 +41,56 @@ import { getFieldWrapper } from "@src/stories/getFieldWrapper";
             ],
           })}
         />;
+=======
+/>
+
+<Canvas>
+  <Story name="Heading">
+    {() => {
+        const schema = ({
+          fields: [
+            {
+              component: 'wizard',
+              name: 'customWizard',
+              formType: 'whistleblowing',
+              fields: [
+                {
+                  component: 'section',
+                  name: 'ASD',
+                  css: {
+                    mt: '3rem',
+                  },
+                  fields: [
+                    {
+                      component: 'info-box',
+                      content: 'Tyto dokumenty vám pošleme také na e-mail nebo poštou.',
+                      name: getRandomId(),
+                      variant: 'clear',
+                      css: {
+                        w: '100%',
+                        fontSize: '0.625rem',
+                        color: 'tercial.indigo1Alpha50',
+                        p: 0,
+                        m: 0,
+                      },
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        })
+
+        return <DataDrivenForm schema={schema} />;
+>>>>>>> 846b0c16 (RELEASE (serif) : new release v0.0.2)
       }}
   </Story>
 </Canvas>
 
 ## Component Props
 
+<<<<<<< HEAD
 <ArgsTable of={InfoBox} />
+=======
+<ArgsTable of={Heading} />
+>>>>>>> 846b0c16 (RELEASE (serif) : new release v0.0.2)
