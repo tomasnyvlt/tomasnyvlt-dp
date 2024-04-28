@@ -2,6 +2,7 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
 import DataDrivenForm from '@src/index';
 import { StorybookProviderDecorator } from '@src/StorybookProviderDecorator';
 import Heading from '@src/components/contents/Heading';
+import { getFieldWrapper } from '@src/stories/getFieldWrapper';
 
 <Meta
   title="Contents / Heading"
@@ -13,34 +14,30 @@ import Heading from '@src/components/contents/Heading';
 <Canvas>
   <Story name="Heading">
     {() => {
-        const schema = ({
-          fields: [
-            {
-              component: 'wizard',
-              name: 'customWizard',
-              formType: 'whistleblowing',
-              fields: [
-                {
-                  component: 'section',
-                  name: 'ASD',
-                  css: {
-                    mt: '3rem',
-                  },
-                  fields: [
-                    {
-                      component: 'heading',
-                      name: 'Heading',
-                      initialValue: 'ASD',
-                    },
-                  ],
+      return (
+        <DataDrivenForm
+          schema={getFieldWrapper({
+            title: 'Heading',
+            sectionContent: [
+              {
+                component: 'section',
+                name: '-',
+                css: {
+                  mt: '3rem',
                 },
-              ],
-            },
-          ],
-        })
-
-        return <DataDrivenForm schema={schema} />;
-      }}
+                fields: [
+                  {
+                    component: 'heading',
+                    name: 'Heading',
+                    initialValue: 'Nadpis',
+                  },
+                ],
+              },
+            ],
+          })}
+        />
+      );
+    }}
   </Story>
 </Canvas>
 

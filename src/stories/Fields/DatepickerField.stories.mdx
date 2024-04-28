@@ -1,0 +1,58 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import DataDrivenForm from '@src/index';
+import { StorybookProviderDecorator } from '@src/StorybookProviderDecorator';
+import Datepicker from '@src/components/fields/Datepicker';
+import { getFieldWrapper } from '@src/stories/getFieldWrapper';
+
+<Meta
+  title="Fields / DatepickerField"
+  component={DataDrivenForm}
+  decorators={[StorybookProviderDecorator]}
+  tags={['autodocs']}
+/>
+
+<Canvas>
+  <Story
+    name="Datepicker"
+  >
+    {() => (
+      <DataDrivenForm
+        schema={getFieldWrapper({
+          title: 'Datepicker',
+          sectionContent: [
+            {
+              component: 'grid',
+              css: {
+                rowGap: {_: '2.5rem', sm: '0'},
+                gridTemplateColumns: {sm: '1fr 1.5rem 1fr'},
+                gridTemplateRows: {sm: 'auto auto'},
+                columnGap: {sm: '0'},
+              },
+              name: "datepicker",
+              fields: [
+                {
+                  component: 'date-picker',
+                  name: 'vehicle.leadinDate',
+                  isRequired: true,
+                  validate: [
+                    { type: 'date' }
+                  ],
+                  label: 'Datum první registrace',
+                  defaultCalendarType: 'year',
+                  initialDate: new Date().toISOString(),
+                  minDate: new Date().toISOString(),
+                  maxDate: new Date().toISOString(),
+                },
+              ]
+            }
+          ],
+        })}
+      />
+    )}
+
+  </Story>
+</Canvas>
+
+## Component Props
+
+<ArgsTable of={Datepicker} />
