@@ -18,10 +18,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "readme": "README.md",
   "name": "DP",
-  "private": false,
-  "version": "0.0.1",
+  "private": true,
+  "version": "0.0.2",
   "type": "module",
   "keywords": [
     "react",
