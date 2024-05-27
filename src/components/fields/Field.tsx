@@ -1,6 +1,6 @@
 import { x } from '@xstyled/emotion';
 import { SystemProps } from '@xstyled/system';
-import React, {
+import {
   ElementType,
   FC,
   LabelHTMLAttributes,

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "@jest/globals";
 
-import { isPatternValid } from "utils/validations/pattern-validations";
+import { isPatternValid } from "@src/utils/validations/pattern-validations";
 
 describe("isPatternValid function", () => {
   it("should return true for a valid email string", () => {

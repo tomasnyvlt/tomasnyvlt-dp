@@ -11,7 +11,7 @@ import AnimatedContent from '@src/components/contents/AnimatedContent';
 import Tag from '@src/components/contents/Tag';
 import { useFormStoreContext } from '@src/hooks/useFormStoreContext';
 import { CardCheckboxAdditionalType } from '@src/types/formFields';
-import getFormattedPrice from '@src/utils/getFormattedPrice';
+import { getFormattedPrice } from '@src/utils/getFormattedPrice';
 import Richtext from '@src/components/other/Richtext';
 import Skeleton from '@src/components/other/Skeleton';
 import { useOnScreen } from '@src/hooks/useOnScreen';

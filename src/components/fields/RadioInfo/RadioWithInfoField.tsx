@@ -9,7 +9,7 @@ import { FC, Fragment } from 'react';
 
 import AnimatedContent from '@src/components/contents/AnimatedContent';
 import { RadioWithInfoFieldType } from '@src/types/formFields';
-import getFormattedPrice from '@src/utils/getFormattedPrice';
+import { getFormattedPrice } from '@src/utils/getFormattedPrice';
 import Richtext from '@src/components/other/Richtext';
 import Skeleton from '@src/components/other/Skeleton';
 

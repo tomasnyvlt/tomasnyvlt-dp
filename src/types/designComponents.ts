@@ -4,7 +4,7 @@ import { SpinnerSize } from "anolis-ui";
 import { Variant as InfoboxThemeVariant } from "@src/components/contents/InfoBox/theme";
 import { BasicComponentType } from "@src/types/basic";
 import { ElementType } from "react";
-import { IPluginUploadFile } from "types/IPluginUploadFile";
+import { IPluginUploadFile } from '@src/components/contents/ImageOrLottie';
 
 type RichTextString = string;
 type Link = { openLinkInNewTab?: boolean; linkText?: string; linkUrl?: string };

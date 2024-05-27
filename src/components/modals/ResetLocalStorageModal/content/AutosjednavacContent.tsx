@@ -1,9 +1,9 @@
 import { x } from '@xstyled/emotion';
 import { FC } from 'react';
-import { VehicleImageType } from '@src/types/autosjednavac/vehicleImageType';
-import { AutoSjednavacFetchRequestType } from '@src/types/autosjednavac/AutoSjednavacFetchType';
-import { confTariffVehicleManufacturerModelFe } from '@src/codetables/generated/conf-tariff-vehicle-manufacturer-model-fe';
-import { confVehicleInsuranceFeEnumsVehicleTypeFe } from '@src/codetables/generated/conf-vehicle-insurance-fe-enums-vehicle-type-fe';
+import { VehicleImageType } from '@src/types/TO_DELETE_autosjednavac/vehicleImageType';
+import { AutoSjednavacFetchRequestType } from '@src/types/TO_DELETE_autosjednavac/AutoSjednavacFetchType';
+import { confTariffVehicleManufacturerModelFe } from '@src/TO_DELETE_codetables/generated/conf-tariff-vehicle-manufacturer-model-fe';
+import { confVehicleInsuranceFeEnumsVehicleTypeFe } from '@src/TO_DELETE_codetables/generated/conf-vehicle-insurance-fe-enums-vehicle-type-fe';
 
 interface AutosjednavacContentProps {
   data: AutoSjednavacFetchRequestType;

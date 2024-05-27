@@ -1,5 +1,5 @@
 import { FormType } from '@src/types';
-import config from '@src/config';
+import config from '@src/TO_DELETE_config';
 
 export interface TopbarRequestDataType<T = string> {
   email: T;

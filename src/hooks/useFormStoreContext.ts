@@ -1,16 +1,17 @@
-import { useContext } from "react";
-
+import { FormFetcherType } from '@src/TO_DELETE';
 import {
   FormStoreContext,
-  FormStoreContextType
-} from "@src/context/FormStoreContext";
-import { FormFetcherType } from "@src/types/fetcher";
+  FormStoreContextType,
+} from '@src/context/FormStoreContext';
+import { useContext } from 'react';
 
-export const useFormStoreContext = <T extends FormFetcherType = any>(): FormStoreContextType<T> => {
+export const useFormStoreContext = <
+  T extends FormFetcherType = any,
+>(): FormStoreContextType<T> => {
   const formStore = useContext<FormStoreContextType<T>>(FormStoreContext);
 
   if (formStore === undefined) {
-    throw new Error("FormStore is used outside of FormStoreContext.Provider");
+    throw new Error('FormStore is used outside of FormStoreContext.Provider');
   }
 
   return formStore;

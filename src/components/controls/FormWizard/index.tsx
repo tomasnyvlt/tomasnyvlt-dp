@@ -12,8 +12,8 @@ import ValidationInfo from '@src/components/contents/ValidationInfo';
 import { useFormWizard } from '@src/components/controls/FormWizard/hooks/useFormWizard';
 import NavigationButtons from '@src/components/controls/NavigationButtons';
 import OnBlurListener from '@src/components/controls/OnBlurListener';
-// import Chat from "components/ui/Chat";
-//import { GlobalEmbedSjednavacChatStyle } from "components/ui/Chat/styles/GlobalEmbedChatStyle";
+// import Chat from "@src/components/ui/Chat";
+//import { GlobalEmbedSjednavacChatStyle } from "@src/components/ui/Chat/styles/GlobalEmbedChatStyle";
 // import config from '@src/config';
 
 const STICKY_CONTAINER_BOTTOM_POSITION = '5rem';

@@ -6,7 +6,7 @@ import { FC, FormEvent } from 'react';
 import Field from '@src/components/fields/Field';
 import { useFieldError } from '@src/hooks/useFieldError';
 import { FileUploadType } from '@src/types';
-//import DpUploadFiles from 'components/contents/forms/shared/upload-files/DpUploadFiles';
+//import DpUploadFiles from '@src/components/contents/forms/shared/upload-files/DpUploadFiles';
 import Richtext from '@src/components/other/Richtext';
 
 const FileUpload: FC<FileUploadType> = ({

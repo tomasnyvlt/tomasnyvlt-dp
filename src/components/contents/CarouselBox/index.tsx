@@ -1,15 +1,12 @@
 import { useFieldApi } from '@data-driven-forms/react-form-renderer';
 import styled, { x } from '@xstyled/emotion';
-import { FC, useState } from 'react';
+import { FC } from 'react';
 //import ReactCarousel from "react-multi-carousel";
 //import "react-multi-carousel/lib/styles.css";
 
-import CarouselDot from '@src/components/contents/CarouselBox/CarouselDot';
-import Item from '@src/components/contents/CarouselBox/Item';
-import { CarouselBoxItemType, CarouselBoxType } from '@src/types';
+import { CarouselBoxType } from '@src/types';
 
 const CarouselBox: FC<CarouselBoxType> = ({ css, contentCss, ...props }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
   const { items, hideField } = useFieldApi(props);
 
   if (!items?.length) return null;

@@ -3,7 +3,7 @@ import { Icon } from 'anolis-ui';
 import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
 
 import { useFormStoreContext } from '@src/hooks/useFormStoreContext';
-import getFormattedPrice from '@src/utils/getFormattedPrice';
+import { getFormattedPrice } from '@src/utils/getFormattedPrice';
 import ArrowDownIcon from '@src/components/other/icons/24/arrow-down.svg?react';
 import Skeleton from '@src/components/other/Skeleton';
 import BasketIconSmall from '@src/components/other/icons/16/basket.svg?react';

@@ -20,7 +20,7 @@ import AnimatedContent from '@src/components/contents/AnimatedContent';
 import { useFieldError } from '@src/hooks/useFieldError';
 import { useFormStoreContext } from '@src/hooks/useFormStoreContext';
 import { CardCheckboxType } from '@src/types';
-import getFormattedPrice from '@src/utils/getFormattedPrice';
+import { getFormattedPrice } from '@src/utils/getFormattedPrice';
 import Richtext from '@src/components/other/Richtext';
 import Skeleton from '@src/components/other/Skeleton';
 import MultiplyIcon from '@src/components/other/icons/24/multiply.svg?react';

@@ -3,7 +3,7 @@ import { x } from '@xstyled/emotion';
 import { SystemProps } from '@xstyled/system';
 import { ElementType, FC } from 'react';
 
-//import LottiePlayer from "components/components/LottiePlayer";
+//import LottiePlayer from "@src/components/components/LottiePlayer";
 //import { IPluginUploadFile } from "types/IPluginUploadFile";
 //import { isLottie } from "utils/isLottie";
 

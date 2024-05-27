@@ -1,9 +1,7 @@
-/* eslint-disable import/no-extraneous-dependencies */
-import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
-import dts from 'vite-plugin-dts';
-import path from 'path';
 import svgr from 'vite-plugin-svgr';
+import { defineConfig } from 'vitest/config';
+import pkg from './package.json';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -15,22 +13,20 @@ export default defineConfig({
     setupFiles: ['./src/setupTests.ts'],
     environment: 'jsdom',
   },
-  define: {
-    global: {},
-  },
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'index.ts'),
+      entry: 'src/index.ts',
       name: 'DP',
+      formats: ['es', 'cjs'],
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: [
+        ...Object.keys(pkg.dependencies),
+        ...Object.keys(pkg.peerDependencies),
+      ],
       output: {
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM',
-        },
+        globals: {},
       },
     },
     sourcemap: true,
@@ -43,7 +39,6 @@ export default defineConfig({
     svgr({
       //include: '**/*.svg?react',
     }),
-    dts(),
   ],
   resolve: {
     alias: {

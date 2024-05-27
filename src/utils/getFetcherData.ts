@@ -1,5 +1,5 @@
 import { formStoreInstance } from "@src/store/formStoreInstance";
-import { FetcherResponseType, FormFetcherType } from "@src/types/fetcher";
+import { FetcherResponseType, FormFetcherType } from '@src/TO_DELETE';
 
 export const getFetcherData = <T extends FormFetcherType>(formType: T): FetcherResponseType<T> => {
   const formInstance = formStoreInstance.get(formType);

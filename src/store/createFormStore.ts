@@ -1,25 +1,24 @@
-import { devtools } from 'zustand/middleware';
-import { shallow } from 'zustand/shallow';
-import { createWithEqualityFn } from 'zustand/traditional';
-
+import { FetcherResponseType, FormFetcherType } from '@src/TO_DELETE';
+import config from '@src/TO_DELETE_config';
 import { formStoreInstance } from '@src/store/formStoreInstance';
 import {
   FormStateType,
   InitialStateType,
   StoreFactoryProps,
 } from '@src/store/types';
-import { FetcherResponseType, FormFetcherType } from '@src/types/fetcher';
+import { generateUniqueKey } from '@src/utils/generateUniqueKey';
 import getActiveUserType from '@src/utils/getActiveUserType';
+import getFlattenArrayByKey, {
+  ArrWithObjectsType,
+} from '@src/utils/getFlattenArrayByKey';
 import getOnBlurFieldNames from '@src/utils/getOnBlurFieldNames';
 import getPreventNextStepConfig from '@src/utils/getPreventNextStepConfig';
 import { DELETE_PREFIX_VALUE } from '@src/utils/getRandomId';
 import getStepNames from '@src/utils/getStepNames';
-import config from '@src/config';
-import { generateUniqueKey } from '@src/utils/generateUniqueKey';
-import getFlattenArrayByKey, {
-  ArrWithObjectsType,
-} from '@src/utils/getFlattenArrayByKey';
 import { logger } from '@src/utils/logger';
+import { devtools } from 'zustand/middleware';
+import { shallow } from 'zustand/shallow';
+import { createWithEqualityFn } from 'zustand/traditional';
 
 // Devtools wrapper for non-production environment only
 const devtoolsInNonProd = (config.env === 'prod'

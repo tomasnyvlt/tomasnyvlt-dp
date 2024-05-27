@@ -7,7 +7,7 @@ import { FC, useEffect, useRef, useState } from 'react';
 import { useFormStoreContext } from '@src/hooks/useFormStoreContext';
 import { FormFieldsType, RadioBoxFieldType } from '@src/types';
 import DirectButton from '@src/components/other/DirectButton';
-import config from '@src/config';
+import config from '@src/TO_DELETE_config';
 import scroll from '@src/utils/scroll';
 import { Basic } from '@src/components/contents/Modal';
 

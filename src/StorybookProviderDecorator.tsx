@@ -6,7 +6,7 @@ import { AnolisProvider } from 'anolis-ui';
 import { ThemeProvider } from '@xstyled/emotion';
 import { BrowserRouter } from 'react-router-dom';
 import { GTMProvider } from '@elgorditosalsero/react-gtm-hook';
-import { GlobalStyles } from '@src/App.tsx';
+import { GlobalStyles } from '@src/GlobalStyles';
 
 interface ModuleProviderDecoratorProps {
   Story: StoryFn;

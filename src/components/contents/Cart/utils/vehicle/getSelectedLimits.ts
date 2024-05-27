@@ -4,8 +4,8 @@ import {
   SelectableOptionItem,
   SelectableOptionItemRemovable
 } from "@src/components/contents/Cart/types";
-import getFormattedPrice from "@src/utils/getFormattedPrice";
-import { PremiumPriceType } from "components/contents/forms/AutosjednavacForm/types/AutoSjednavacFetchType";
+import { PremiumPriceType } from '@src/types/TO_DELETE_autosjednavac/AutoSjednavacFetchType';
+import { getFormattedPrice } from '@src/utils/getFormattedPrice';
 
 type GetDescriptionProps = Pick<SelectableOptionItem, "description" | "selectedLimit">;
 

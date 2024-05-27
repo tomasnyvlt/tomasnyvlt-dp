@@ -1,6 +1,6 @@
 import { useFieldApi } from "@data-driven-forms/react-form-renderer";
 import { x } from "@xstyled/emotion";
-import React, { FC } from "react";
+import { FC } from 'react';
 
 import Option from "@src/components/fields/RadioImage/components/Option";
 import { useFieldError } from "@src/hooks/useFieldError";

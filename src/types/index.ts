@@ -1,17 +1,22 @@
-import { AnyObject } from "@data-driven-forms/react-form-renderer/common-types/any-object";
-import { FetcherResponseType, FormFetcherType } from "@src/types/fetcher";
-import { LayoutFieldsType, SectionType } from "@src/types/layout";
-import { CartFieldsType } from "@src/types/cart";
-import { FormOptions } from "@data-driven-forms/react-form-renderer";
-import { FormFieldsType } from "@src/types/formFields";
-import { FC } from "react";
+import { FormOptions } from '@data-driven-forms/react-form-renderer';
+import { AnyObject } from '@data-driven-forms/react-form-renderer/common-types/any-object';
+import { FetcherResponseType, FormFetcherType } from '@src/TO_DELETE';
+import { CartFieldsType } from '@src/types/cart';
+import { FormFieldsType } from '@src/types/formFields';
+import { LayoutFieldsType, SectionType } from '@src/types/layout';
+import { FC } from 'react';
 
-export * from "@src/types/layout";
-export * from "@src/types/designComponents";
-export * from "@src/types/formFields";
-export * from "@src/types/cart";
+export * from '@src/types/cart';
+export * from '@src/types/designComponents';
+export * from '@src/types/formFields';
+export * from '@src/types/layout';
+export * from '@src/types/validation';
 
-export type FormType = "autosjednavac" | "autosjednavac-zarazeni-do-flotily" | "klientske-zmeny" | "whistleblowing";
+export type FormType =
+  | 'autosjednavac'
+  | 'autosjednavac-zarazeni-do-flotily'
+  | 'klientske-zmeny'
+  | 'whistleblowing';
 
 export interface HideBottomElementsFieldType {
   fieldName: string;
@@ -21,7 +26,7 @@ export interface HideBottomElementsFieldType {
 /**
  * Wrapper types
  */
-export type ActiveUserType = "broker" | "internal" | "customer";
+export type ActiveUserType = 'broker' | 'internal' | 'customer';
 
 export interface PreventNextStepType {
   message: string;
@@ -33,13 +38,13 @@ export interface PreventNextStepType {
 }
 
 export interface StepType {
-  component: "step";
+  component: 'step';
   name: string;
   title: string;
   fields: SectionType[];
   maxWidth?: string;
   hideBottomElementsWhen?: {
-    type: "and" | "or";
+    type: 'and' | 'or';
     fields: HideBottomElementsFieldType[];
   };
   dataLayer?: {
@@ -94,7 +99,7 @@ export interface ChatConfigType {
 }
 
 export interface DataLayerType {
-  visitorLoginState?: "zákazník";
+  visitorLoginState?: 'zákazník';
   pageType?: string;
   pageDepartment?: string;
   pageMainCategory?: string;
@@ -103,7 +108,7 @@ export interface DataLayerType {
 export interface OnBlurConfigType {
   activeOnSteps: number[];
   fieldNames?: string[];
-  componentNames?: FormFieldsType["component"][];
+  componentNames?: FormFieldsType['component'][];
 }
 
 export interface CustomComponentType {
@@ -113,7 +118,7 @@ export interface CustomComponentType {
 }
 
 export interface WizardType {
-  component: "wizard";
+  component: 'wizard';
   name: string;
   localStorageKey?: string;
   fields: StepType[];
@@ -130,5 +135,8 @@ export interface WizardType {
 
 export interface SchemaType {
   fields: WizardType[];
-  onSubmit?: (formOptions: FormOptions, fetcherData: FetcherResponseType<FormFetcherType>) => void;
+  onSubmit?: (
+    formOptions: FormOptions,
+    fetcherData: FetcherResponseType<FormFetcherType>
+  ) => void;
 }

@@ -1,5 +1,5 @@
 import { SystemProps, x } from "@xstyled/emotion";
-import React, { FC, InputHTMLAttributes, useId } from "react";
+import { FC, InputHTMLAttributes, useId } from 'react';
 
 import Tag from "@src/components/contents/Tag";
 import { RadioFrequencyButtonOptionFieldType } from "@src/types/formFields";

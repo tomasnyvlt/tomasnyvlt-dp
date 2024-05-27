@@ -6,7 +6,7 @@ export interface DirectButtonProps extends Omit<ButtonProps, 'v'> {
   v?: 'solid' | 'outline' | 'clear' | 'gradient' | 'link';
 }
 
-const DirectButton: FC<PropsWithChildren<DirectButtonProps>> = ({
+export const DirectButton: FC<PropsWithChildren<DirectButtonProps>> = ({
   children,
   v,
   ...props

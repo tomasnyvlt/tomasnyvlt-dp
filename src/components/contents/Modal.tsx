@@ -10,7 +10,7 @@ import { FC, ReactNode, useEffect } from 'react';
 
 import MeetingRecordForm from '@src/components/contents/Cart/components/ModalContent/MeetingRecordForm';
 import BonusModalContent from '@src/components/modals/BonusModalContent';
-import config from '@src/config';
+import config from '@src/TO_DELETE_config';
 import scroll from '@src/utils/scroll';
 
 export interface BasicProps extends Omit<AnolisModalProps, 'content'> {

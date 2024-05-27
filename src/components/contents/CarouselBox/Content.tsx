@@ -3,7 +3,7 @@ import { TypographyProps } from 'anolis-ui';
 import { FC } from 'react';
 
 import Richtext from '@src/components/other/Richtext';
-import { isJsonString } from 'utils/isJsonString';
+import { isJsonString } from '@src/utils/isJsonString';
 
 const typographyStyles: TypographyProps = {
   color: 'grayscale.grayWarm',

@@ -4,7 +4,7 @@ import { FC } from "react";
 import { CartDataType } from "@src/components/contents/Cart/types";
 import getDiscountInfoText from "@src/components/contents/Cart/utils/getDiscountInfoText";
 import { useFormStoreContext } from "@src/hooks/useFormStoreContext";
-import getFormattedPrice from "@src/utils/getFormattedPrice";
+import { getFormattedPrice } from '@src/utils/getFormattedPrice';
 
 const ContentBottom: FC<Omit<CartDataType, "items">> = ({ discountArr, finalPrice, bonusPercentage }) => {
   const useStore = useFormStoreContext();

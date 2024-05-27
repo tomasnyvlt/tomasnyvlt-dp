@@ -3,9 +3,9 @@ import { useModal } from 'anolis-ui';
 
 import { FC, useState } from 'react';
 
-import { FetcherResponseType, FormFetcherType } from '@src/types/fetcher';
+import { FetcherResponseType, FormFetcherType } from '@src/TO_DELETE';
 import setFormValuesFromDataObject from '@src/utils/setFormValuesFromDataObject';
-import dpApiFetch from '@src/utils/dpApiFetch';
+import dpApiFetch from '@src/utils/TO_DELETE_dpApiFetch';
 import { Basic } from '@src/components/contents/Modal.tsx';
 import { useGetFillformId } from '@src/utils/useGetFillformId.ts';
 import DirectButton from '@src/components/other/DirectButton.tsx';

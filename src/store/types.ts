@@ -14,13 +14,16 @@ import {
   FetcherRequestType,
   FetcherResponseType,
   FormFetcherType,
-} from '@src/types/fetcher';
+} from '@src/TO_DELETE';
 import { UserType } from '@src/utils/getActiveUserType';
 import { ValidationErrors } from '@src/utils/getFullErrorKeys';
 import { PreventNextStepConfigType } from '@src/utils/getPreventNextStepConfig';
 import { SpyFieldValueType } from '@src/utils/getSpyFields';
-import { UserDiscountLimitProps } from 'components/contexts/UserContext';
+// import { UserDiscountLimitProps } from '@src/components/contexts/UserContext';
 import { ArrWithObjectsType } from '@src/utils/getFlattenArrayByKey';
+import { TODO } from '@src/utils/todo';
+
+type UserDiscountLimitProps = TODO;
 
 export interface StoreFactoryProps {
   schema: SchemaType;

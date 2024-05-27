@@ -11,7 +11,7 @@ import { FC, useEffect, useRef } from 'react';
 
 import { useFormStoreContext } from '@src/hooks/useFormStoreContext';
 import { EditFieldType } from '@src/types/formFields';
-import getFormattedPrice from '@src/utils/getFormattedPrice';
+import { getFormattedPrice } from '@src/utils/getFormattedPrice';
 import Richtext from '@src/components/other/Richtext';
 import PenIcon from '@src/components/other/icons/24/pen.svg?react';
 import Skeleton from '@src/components/other/Skeleton';

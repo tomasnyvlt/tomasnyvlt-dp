@@ -1,6 +1,9 @@
-import { OptionType } from "@src/types";
-import { FetcherResponseType, FormFetcherType } from "@src/types/fetcher";
-import { PremiumPriceType, PriceType } from "components/contents/forms/AutosjednavacForm/types/AutoSjednavacFetchType";
+import { FetcherResponseType, FormFetcherType } from '@src/TO_DELETE';
+import { OptionType } from '@src/types';
+import {
+  PremiumPriceType,
+  PriceType,
+} from '@src/types/TO_DELETE_autosjednavac/AutoSjednavacFetchType';
 
 export interface CartItemTypeBasic {
   description: string;
@@ -12,7 +15,8 @@ export interface CartItemTypeBasic {
 
 type DefaultFieldValueType = string | boolean | Record<string, unknown> | null;
 
-export interface CartItemTypeRemovable extends Omit<CartItemTypeBasic, "removable"> {
+export interface CartItemTypeRemovable
+  extends Omit<CartItemTypeBasic, 'removable'> {
   removable: true;
   fieldName: string;
   defaultFieldValue: DefaultFieldValueType; // Default field value used for change
@@ -33,13 +37,16 @@ export interface SelectableOptionItemBasic {
   removable: false;
 }
 
-export interface SelectableOptionItemRemovable extends Omit<SelectableOptionItemBasic, "removable"> {
+export interface SelectableOptionItemRemovable
+  extends Omit<SelectableOptionItemBasic, 'removable'> {
   fieldName: string;
   defaultFieldValue: DefaultFieldValueType;
   removable: true;
 }
 
-export type SelectableOptionItem = SelectableOptionItemBasic | SelectableOptionItemRemovable;
+export type SelectableOptionItem =
+  | SelectableOptionItemBasic
+  | SelectableOptionItemRemovable;
 
 export interface CartDataType {
   finalPrice: number;

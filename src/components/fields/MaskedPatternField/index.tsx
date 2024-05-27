@@ -1,5 +1,5 @@
 import { useFieldApi, useFormApi } from "@data-driven-forms/react-form-renderer";
-import React, { FC } from "react";
+import { FC } from 'react';
 import { NumberFormatValues } from "react-number-format/types/types";
 
 import Field from "@src/components/fields/Field";

@@ -18,7 +18,7 @@ import getTopbarRequestData, {
 } from '@src/components/contents/Cart/utils/getTopbarRequestData';
 import { useFormStoreContext } from '@src/hooks/useFormStoreContext';
 import { WizardType } from '@src/types';
-import dpApiFetch from '@src/utils/dpApiFetch';
+import dpApiFetch from '@src/utils/TO_DELETE_dpApiFetch';
 import { Basic } from '@src/components/contents/Modal';
 
 interface Output {

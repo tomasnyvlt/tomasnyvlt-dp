@@ -1,5 +1,5 @@
 import { FormStoreReturnType } from "@src/store/types";
-import { FormFetcherType } from "@src/types/fetcher";
+import { FormFetcherType } from '@src/TO_DELETE';
 
 const formStoreInstaceMap = new Map<string, FormStoreReturnType>();
 

@@ -1,4 +1,4 @@
-import { VehicleSecurityLevelType } from 'components/contents/forms/AutosjednavacForm/types/VehicleInfoType';
+import { VehicleSecurityLevelType } from '../../../diplomova-prace-next/types/autosjednavac/VehicleInfoType';
 
 export interface VehicleInfoProps {
   manufacturerModelCode: string;
