@@ -1,5 +1,5 @@
 import { ValidatorMapper } from '@data-driven-forms/react-form-renderer';
-import DataDrivenFormRenderer from '@data-driven-forms/react-form-renderer/form-renderer';
+import { FormRenderer as DataDrivenFormRenderer } from '@data-driven-forms/react-form-renderer';
 import { FC, Fragment, useMemo } from 'react';
 
 import componentMapper from '@src/components/componentMapper';

@@ -37,7 +37,7 @@
   "scripts": {
     "dev": "vite --force",
     "release": "bash ./scripts/release.sh",
-    "build": "vite build && build:types",
+    "build": "vite build && pnpm build:types",
     "build:types": "tsc && tsc-alias -p tsconfig.json",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",

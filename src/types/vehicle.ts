@@ -1,5 +1,3 @@
-import { VehicleSecurityLevelType } from '../../../diplomova-prace-next/types/autosjednavac/VehicleInfoType';
-
 export interface VehicleInfoProps {
   manufacturerModelCode: string;
   manufacturer: string;
@@ -14,7 +12,7 @@ export interface VehicleInfoProps {
   countPlace: number; // pocet mist k sezeni
   leadinDate: Date | null; // datum uvedeni do provozu
   leadinDateInFuture: boolean; // true pokud bude vozidlo uvedeno do provozu v budoucnu (nová vozidla)
-  securityLevel: VehicleSecurityLevelType[]; // List<Enum> zabezpeceni vozidla - lze vybrat 1 - X prvků
+  securityLevel: any; // List<Enum> zabezpeceni vozidla - lze vybrat 1 - X prvků
   actualValue: number; // hodnota vozu; pripadne VEHICLE_VALUE
   actualValueVATIncluded: boolean; // true = včetně daně; default = true
   purchaseValue: number; // pořizovací cena vozidla

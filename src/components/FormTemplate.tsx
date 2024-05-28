@@ -1,13 +1,13 @@
-import { useFormApi } from "@data-driven-forms/react-form-renderer";
-import { FormTemplateRenderProps } from "@data-driven-forms/react-form-renderer/common-types/form-template-render-props";
-import { x } from "@xstyled/emotion";
-import { AnolisProvider } from "anolis-ui";
-import { FC, FormEvent, ReactNode } from "react";
+import { useFormApi } from '@data-driven-forms/react-form-renderer';
+import { FormTemplateRenderProps } from '@data-driven-forms/react-form-renderer/common-types/form-template-render-props';
+import { x } from '@xstyled/emotion';
+import { AnolisProvider } from 'anolis-ui';
+import { FC, FormEvent, ReactNode } from 'react';
 
-import Modal from "@src/components/contents/Modal";
-import { useFormStoreContext } from "@src/hooks/useFormStoreContext";
-import { useFormStoreSideEffects } from "@src/hooks/useFormStoreSideEffects";
-import { useFormStoreStateSetup } from "@src/hooks/useFormStoreStateSetup";
+import Modal from '@src/components/contents/Modal';
+import { useFormStoreContext } from '@src/hooks/useFormStoreContext';
+import { useFormStoreSideEffects } from '@src/hooks/useFormStoreSideEffects';
+import { useFormStoreStateSetup } from '@src/hooks/useFormStoreStateSetup';
 
 const FormTemplate: FC<FormTemplateRenderProps> = ({ formFields, schema }) => {
   const useStore = useFormStoreContext();

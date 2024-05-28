@@ -1,14 +1,14 @@
-import WizardContext from "@data-driven-forms/react-form-renderer/wizard-context";
-import { useGTMDispatch } from "@elgorditosalsero/react-gtm-hook";
-import { x } from "@xstyled/emotion";
-import { FC, useContext, useEffect, useId, useRef, useState } from "react";
+import { default as WizardContext } from '@data-driven-forms/react-form-renderer/wizard-context';
+import { useGTMDispatch } from '@elgorditosalsero/react-gtm-hook';
+import { x } from '@xstyled/emotion';
+import { FC, useContext, useEffect, useId, useRef, useState } from 'react';
 
-import CartContent from "@src/components/contents/Cart/components/CartContent";
-import CartMainButton from "@src/components/contents/Cart/components/CartMainButton";
-import MeetingRecordButton from "@src/components/contents/Cart/components/MeetingRecordButton";
-import OwnTemplateCheckbox from "@src/components/contents/Cart/components/OwnTemplateCheckbox";
-import { useCart } from "@src/components/contents/Cart/hooks/useCart";
-import { useFormStoreContext } from "@src/hooks/useFormStoreContext";
+import CartContent from '@src/components/contents/Cart/components/CartContent';
+import CartMainButton from '@src/components/contents/Cart/components/CartMainButton';
+import MeetingRecordButton from '@src/components/contents/Cart/components/MeetingRecordButton';
+import OwnTemplateCheckbox from '@src/components/contents/Cart/components/OwnTemplateCheckbox';
+import { useCart } from '@src/components/contents/Cart/hooks/useCart';
+import { useFormStoreContext } from '@src/hooks/useFormStoreContext';
 
 interface CartProps {
   isContentVisible: boolean;
@@ -19,9 +19,10 @@ const Cart: FC<CartProps> = ({ isContentVisible }) => {
   const { isInternalUser, isAgent, dataLayer } = useStore((state) => ({
     isInternalUser: state.isInternalUser,
     isAgent: state.isAgent,
-    dataLayer: state.dataLayer
+    dataLayer: state.dataLayer,
   }));
-  const { isOpen, setIsOpen, hasVisibleCartFields, cartData, deleteItem } = useCart();
+  const { isOpen, setIsOpen, hasVisibleCartFields, cartData, deleteItem } =
+    useCart();
   const sendDataToGTM = useGTMDispatch();
   const { currentStep } = useContext(WizardContext);
   const { finalPrice, itemsCount } = cartData;
@@ -56,9 +57,9 @@ const Cart: FC<CartProps> = ({ isContentVisible }) => {
     if (!buttonContainerRef.current) return;
 
     sendDataToGTM({
-      event: `${dataLayer?.pageMainCategory ?? ""}_sjednavac_kosik`,
+      event: `${dataLayer?.pageMainCategory ?? ''}_sjednavac_kosik`,
       step: `${currentStep.name} - ${currentStep.title}`,
-      action: isOpen ? "Otevření" : "Zavření"
+      action: isOpen ? 'Otevření' : 'Zavření',
     });
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -69,10 +70,10 @@ const Cart: FC<CartProps> = ({ isContentVisible }) => {
   return (
     <x.div
       position="sticky"
-      bottom={{ _: "1.625rem", sm: "1.875rem" }}
+      bottom={{ _: '1.625rem', sm: '1.875rem' }}
       my="2rem"
       mx="auto"
-      maxW={isInternalUser || isAgent ? "42.5rem" : "30.1875rem"}
+      maxW={isInternalUser || isAgent ? '42.5rem' : '30.1875rem'}
       bg="transparent"
       zIndex={1001}
     >
@@ -88,8 +89,8 @@ const Cart: FC<CartProps> = ({ isContentVisible }) => {
 
         <x.div
           maxH={{
-            _: "75vh",
-            sm: "85vh"
+            _: '75vh',
+            sm: '85vh',
           }}
           boxShadow="cardCheckbox"
           display="flex"
@@ -97,7 +98,13 @@ const Cart: FC<CartProps> = ({ isContentVisible }) => {
           backgroundColor="transparent"
           borderRadius="4.5rem"
         >
-          <x.div h="100%" overflow="hidden" display="flex" flexDirection="column" position="relative">
+          <x.div
+            h="100%"
+            overflow="hidden"
+            display="flex"
+            flexDirection="column"
+            position="relative"
+          >
             <x.div
               ref={buttonContainerRef}
               position="relative"

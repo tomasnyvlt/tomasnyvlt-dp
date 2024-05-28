@@ -1,20 +1,20 @@
-import selectNext from "@data-driven-forms/common/wizard/select-next";
-import { useFormApi } from "@data-driven-forms/react-form-renderer";
-import WizardContext from "@data-driven-forms/react-form-renderer/wizard-context";
-import { useGTMDispatch } from "@elgorditosalsero/react-gtm-hook";
-import { RefObject, useCallback, useContext, useEffect, useRef } from "react";
+import selectNext from '@data-driven-forms/common/wizard/select-next';
+import { useFormApi } from '@data-driven-forms/react-form-renderer';
+import { default as WizardContext } from '@data-driven-forms/react-form-renderer/wizard-context';
+import { useGTMDispatch } from '@elgorditosalsero/react-gtm-hook';
+import { RefObject, useCallback, useContext, useEffect, useRef } from 'react';
 
-import { GetButtonStyleProps } from "@src/components/controls/NavigationButtons/utils/getButtonStyle";
-import scrollToFirstErrorOnPage from "@src/components/controls/utils/scrollToFirstErrorOnPage";
-import { useFormStoreContext } from "@src/hooks/useFormStoreContext";
-import { NavigationButtonConfigType } from "@src/types";
+import { GetButtonStyleProps } from '@src/components/controls/NavigationButtons/utils/getButtonStyle';
+import scrollToFirstErrorOnPage from '@src/components/controls/utils/scrollToFirstErrorOnPage';
+import { useFormStoreContext } from '@src/hooks/useFormStoreContext';
+import { NavigationButtonConfigType } from '@src/types';
 
 interface ButtonType {
   label: string;
   isVisible: boolean;
   isLoading?: boolean;
   handleClick: () => void;
-  variant: GetButtonStyleProps["variant"];
+  variant: GetButtonStyleProps['variant'];
   ref: RefObject<HTMLButtonElement>;
 }
 
@@ -30,19 +30,26 @@ interface Output {
 }
 
 const useNavigationButtons = (): Output => {
-  const { formOptions, handlePrev, activeStepIndex, handleNext, currentStep } = useContext(WizardContext);
+  const { formOptions, handlePrev, activeStepIndex, handleNext, currentStep } =
+    useContext(WizardContext);
   const { handleSubmit, getFieldState, resetFieldState } = useFormApi();
 
   const useStore = useFormStoreContext();
-  const { stepNames, getTotalSteps, restValidation, isFetchLoading, navigationButtons, getStepFlattenFields } =
-    useStore((state) => ({
-      stepNames: state.stepNames,
-      getTotalSteps: state.getTotalSteps,
-      restValidation: state.restValidation,
-      isFetchLoading: state.isFetchLoading,
-      navigationButtons: state.navigationButtons,
-      getStepFlattenFields: state.getStepFlattenFields
-    }));
+  const {
+    stepNames,
+    getTotalSteps,
+    restValidation,
+    isFetchLoading,
+    navigationButtons,
+    getStepFlattenFields,
+  } = useStore((state) => ({
+    stepNames: state.stepNames,
+    getTotalSteps: state.getTotalSteps,
+    restValidation: state.restValidation,
+    isFetchLoading: state.isFetchLoading,
+    navigationButtons: state.navigationButtons,
+    getStepFlattenFields: state.getStepFlattenFields,
+  }));
 
   const prevBtnRef = useRef<HTMLButtonElement>(null);
   const nextBtnRef = useRef<HTMLButtonElement>(null);
@@ -51,9 +58,12 @@ const useNavigationButtons = (): Output => {
 
   const { errors, values } = formOptions.getState();
 
-  const getButtonLabel = useCallback(({ labelArr, activeIndex, fallback }: GetButtonLabelAttrType) => {
-    return labelArr?.[activeIndex] || fallback;
-  }, []);
+  const getButtonLabel = useCallback(
+    ({ labelArr, activeIndex, fallback }: GetButtonLabelAttrType) => {
+      return labelArr?.[activeIndex] || fallback;
+    },
+    []
+  );
 
   const handlePrevClick = (): void => {
     handlePrev();
@@ -82,7 +92,7 @@ const useNavigationButtons = (): Output => {
 
     if (currentStep?.sendToGTMOnNext) {
       sendDataToGTM({
-        ...currentStep?.sendToGTMOnNext?.(values)
+        ...currentStep?.sendToGTMOnNext?.(values),
       });
     }
 
@@ -98,14 +108,19 @@ const useNavigationButtons = (): Output => {
     }
 
     // Rest errors
-    if (Object.keys(restValidation.errors ?? {})?.length || restValidation.errorMessages?.length) {
+    if (
+      Object.keys(restValidation.errors ?? {})?.length ||
+      restValidation.errorMessages?.length
+    ) {
       // Scroll (and focus) to the first rest error on current step
       scrollToFirstErrorOnPage(restValidation.errors, true);
 
       return;
     }
 
-    handleNext(selectNext(stepNames[activeStepIndex + 1], formOptions.getState));
+    handleNext(
+      selectNext(stepNames[activeStepIndex + 1], formOptions.getState)
+    );
   };
 
   // Reset fields meta data on step change
@@ -129,32 +144,33 @@ const useNavigationButtons = (): Output => {
     label: getButtonLabel({
       labelArr: navigationButtons?.prev?.labelArr,
       activeIndex: activeStepIndex,
-      fallback: "Zpět"
+      fallback: 'Zpět',
     }),
     isVisible: activeStepIndex > 0,
     isLoading: false,
     handleClick: handlePrevClick,
-    variant: "outline",
-    ref: prevBtnRef
+    variant: 'outline',
+    ref: prevBtnRef,
   };
 
   const nextButton: ButtonType = {
     label: getButtonLabel({
       labelArr: navigationButtons?.next?.labelArr,
       activeIndex: activeStepIndex,
-      fallback: "Pokračovat"
+      fallback: 'Pokračovat',
     }),
     isVisible: activeStepIndex < getTotalSteps() - 1,
     isLoading: restValidation.isLoading || isFetchLoading,
     handleClick: handleNextClick,
-    variant: "gradient",
-    ref: nextBtnRef
+    variant: 'gradient',
+    ref: nextBtnRef,
   };
 
   return {
     nextButton,
     prevButton,
-    activeOnCurrentStep: navigationButtons?.activeOnSteps?.includes(activeStepIndex) ?? false
+    activeOnCurrentStep:
+      navigationButtons?.activeOnSteps?.includes(activeStepIndex) ?? false,
   };
 };
 

@@ -1,5 +1,5 @@
 import { AnyObject, useFormApi } from '@data-driven-forms/react-form-renderer';
-import WizardContext from '@data-driven-forms/react-form-renderer/wizard-context';
+import { default as WizardContext } from '@data-driven-forms/react-form-renderer/wizard-context';
 import { useContext, useEffect, useRef, useState } from 'react';
 import scrollToFirstErrorOnPage from '@src/components/controls/utils/scrollToFirstErrorOnPage';
 import { useFormStoreContext } from '@src/hooks/useFormStoreContext';

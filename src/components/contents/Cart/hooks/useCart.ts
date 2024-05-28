@@ -1,5 +1,5 @@
 import { useFormApi } from '@data-driven-forms/react-form-renderer';
-import WizardContext from '@data-driven-forms/react-form-renderer/wizard-context';
+import { default as WizardContext } from '@data-driven-forms/react-form-renderer/wizard-context';
 import {
   Dispatch,
   SetStateAction,

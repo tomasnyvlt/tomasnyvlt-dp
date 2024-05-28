@@ -1,6 +1,6 @@
 import Wizard, { WizardProps } from '@data-driven-forms/common/wizard';
 import { FormSpy } from '@data-driven-forms/react-form-renderer';
-import WizardContext from '@data-driven-forms/react-form-renderer/wizard-context';
+import { default as WizardContext } from '@data-driven-forms/react-form-renderer/wizard-context';
 import { x } from '@xstyled/emotion';
 import { Container } from 'anolis-ui';
 import { FC, useContext } from 'react';
