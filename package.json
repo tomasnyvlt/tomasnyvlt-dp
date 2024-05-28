@@ -18,7 +18,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "name": "DP",
+  "name": "tomasnyvlt-dp",
   "private": true,
   "version": "0.0.2",
   "type": "module",

@@ -1,5 +1,5 @@
-import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
-import DataDrivenForm from "@src/index";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/blocks";
+import { DataDrivenForm } from "@src/index";
 import { StorybookProviderDecorator } from "@src/StorybookProviderDecorator";
 import ToggleField from "@src/components/fields/ToggleField";
 import { getFieldWrapper } from "@src/stories/getFieldWrapper";
@@ -12,15 +12,17 @@ import { getFieldWrapper } from "@src/stories/getFieldWrapper";
   argTypes={{
     label: { control: "text" },
     options: { control: '' },
-    initialValue: {control: "text"}
+    initialValue: {control: "text"},
   }}
 />
+
+# ToggleField
 
 <Canvas>
   <Story
     name="ToggleField"
     args={{
-      label: "Label",
+      label: 'Toggle Field',
       options: [
         {
           value: 1,
@@ -37,11 +39,11 @@ import { getFieldWrapper } from "@src/stories/getFieldWrapper";
     {(args) => (
       <DataDrivenForm
         schema={getFieldWrapper({
-          title: "ToggleField",
+          title: 'ToggleField',
           sectionContent: [
             {
-              component: "toggle-field",
-              name: "storybook.toggleField",
+              component: 'toggle-field',
+              name: 'storybook.toggleField',
               options: args.options,
               initialValue: args.initialValue
             },

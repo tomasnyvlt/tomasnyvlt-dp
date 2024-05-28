@@ -1,5 +1,5 @@
-import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
-import DataDrivenForm from "@src/index";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/blocks";
+import { DataDrivenForm } from "@src/index";
 import { StorybookProviderDecorator } from "@src/StorybookProviderDecorator";
 import SwitchField from "@src/components/fields/SwitchField";
 import { getFieldWrapper } from "@src/stories/getFieldWrapper";
@@ -11,10 +11,13 @@ import { getFieldWrapper } from "@src/stories/getFieldWrapper";
   tags={["autodocs"]}
   argTypes={{
     label: { control: "text" },
-    options: { control: '' },
-    initialValue: "value1"
+    options: { control: "object" },
+    initialValue: { control: "text" },
+    isDisabled: { control: "boolean" },
   }}
 />
+
+# SwitchField
 
 <Canvas>
   <Story
@@ -31,7 +34,8 @@ import { getFieldWrapper } from "@src/stories/getFieldWrapper";
           value: "value2"
         }
       ],
-      initialValue: "value1"
+      initialValue: "value1",
+      isDisabled: false
     }}
   >
     {(args) => (
@@ -42,8 +46,10 @@ import { getFieldWrapper } from "@src/stories/getFieldWrapper";
             {
               component: "switch-field",
               name: "storybook.switchfield",
+              label: args.label,
               options: args.options,
-              initialValue: args.initialValue
+              initialValue: args.initialValue,
+              isDisabled: args.isDisabled
             },
           ],
         })}

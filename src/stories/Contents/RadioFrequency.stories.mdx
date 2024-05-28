@@ -1,5 +1,5 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
-import DataDrivenForm from '@src/index';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks';
+import { DataDrivenForm } from '@src/index';
 import { StorybookProviderDecorator } from '@src/StorybookProviderDecorator';
 import RadioContainer from '@src/components/contents/RadioFrequency/RadioContainer';
 import { getFieldWrapper } from '@src/stories/getFieldWrapper';
@@ -11,39 +11,39 @@ import { getFieldWrapper } from '@src/stories/getFieldWrapper';
   tags={['autodocs']}
 />
 
+# RadioFrequency
+
 <Canvas>
   <Story name="RadioFrequency">
-    {() => {
-      return (
-        <DataDrivenForm
-          schema={getFieldWrapper({
-            title: 'RadioFrequency',
-            sectionContent: [
-              {
-                component: 'radio-container',
-                name: 'Radiocontainer',
-                options: [
-                  {
-                    component: 'radio-frequency-button',
-                    label: 'Ročně',
-                    value: '2',
-                    frequency: '1',
-                    price: '2222',
-                  },
-                  {
-                    component: 'radio-frequency-button',
-                    label: 'Měsíčně',
-                    value: 'monthly',
-                    price: '1122',
-                    frequency: '12',
-                  },
-                ],
-              },
-            ],
-          })}
-        />
-      );
-    }}
+    {() => (
+      <DataDrivenForm
+        schema={getFieldWrapper({
+          title: 'RadioFrequency',
+          sectionContent: [
+            {
+              component: 'radio-container',
+              name: 'Radiocontainer',
+              options: [
+                {
+                  component: 'radio-frequency-button',
+                  label: 'Ročně',
+                  value: '2',
+                  frequency: '1',
+                  price: '2222',
+                },
+                {
+                  component: 'radio-frequency-button',
+                  label: 'Měsíčně',
+                  value: 'monthly',
+                  price: '1122',
+                  frequency: '12',
+                },
+              ],
+            },
+          ],
+        })}
+      />
+    )}
   </Story>
 </Canvas>
 

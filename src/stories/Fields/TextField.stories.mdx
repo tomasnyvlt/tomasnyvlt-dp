@@ -1,5 +1,5 @@
-import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
-import DataDrivenForm from "@src/index";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/blocks";
+import { DataDrivenForm } from "@src/index";
 import { StorybookProviderDecorator } from "@src/StorybookProviderDecorator";
 import TextField from "@src/components/fields/TextField";
 import { getFieldWrapper } from "@src/stories/getFieldWrapper";
@@ -11,19 +11,19 @@ import { getFieldWrapper } from "@src/stories/getFieldWrapper";
   tags={["autodocs"]}
   argTypes={{
     label: { control: "text" },
-    helper: { control: "text" },
     isDisabled: { control: "boolean" },
     textarea: { control: "boolean" },
     hideField: { control: "boolean" },
   }}
 />
 
+# TextField
+
 <Canvas>
   <Story
     name="TextField"
     args={{
-      label: "Label",
-      helper: "Helper",
+      label: "Text Field",
       isDisabled: false,
       textarea: false,
       hideField: false,
@@ -32,11 +32,11 @@ import { getFieldWrapper } from "@src/stories/getFieldWrapper";
     {(args) => (
       <DataDrivenForm
         schema={getFieldWrapper({
-          title: "TextField",
+          title: 'TextField',
           sectionContent: [
             {
-              component: "text-field",
-              name: "storybook.textfield",
+              component: 'text-field',
+              name: 'storybook.textfield',
               label: args.label,
               isDisabled: args.isDisabled,
               textarea: args.textarea,

@@ -1,47 +1,46 @@
-import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
-import DataDrivenForm from "@src/index";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/blocks";
+import { DataDrivenForm } from "@src/index";
 import { StorybookProviderDecorator } from "@src/StorybookProviderDecorator";
 import MaskedNumberField from "@src/components/fields/MaskedNumberField";
 import { getFieldWrapper } from "@src/stories/getFieldWrapper";
 
 <Meta
-  title="Fields / Masked Number Field"
+  title="Fields / MaskedNumberField"
   component={DataDrivenForm}
   decorators={[StorybookProviderDecorator]}
   tags={["autodocs"]}
   argTypes={{
     label: { control: "text" },
-    helper: { control: "text" },
-    suffix: { control: "text" },
-    maxValue: { control: "number" },
-    initialValue: { control: "text" }
+    mask: { control: "text" },
+    isDisabled: { control: "boolean" },
+    hideField: { control: "boolean" },
   }}
 />
 
+# MaskedNumberField
+
 <Canvas>
   <Story
-    name="Masked Number Field"
+    name="MaskedNumberField"
     args={{
-      label: "Label",
-      helper: "Helper",
-      suffix: ' kW',
-      maxValue: 99999,
-      initialValue: "1"
+      label: 'Masked Number Field',
+      mask: '9999',
+      isDisabled: false,
+      hideField: false,
     }}
   >
     {(args) => (
       <DataDrivenForm
         schema={getFieldWrapper({
-          title: "Masked Number Field",
+          title: 'MaskedNumberField',
           sectionContent: [
             {
-              component: "masked-number-field",
-              name: "storybook.maskedNumberField",
-              helper: args.helper,
+              component: 'masked-number-field',
+              name: 'storybook.maskedNumberField',
               label: args.label,
-              suffix: args.suffix,
-              maxValue: args.maxValue,
-              initialValue: args.initialValue
+              mask: args.mask,
+              isDisabled: args.isDisabled,
+              hideField: args.hideField,
             },
           ],
         })}

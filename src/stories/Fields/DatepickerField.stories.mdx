@@ -1,5 +1,5 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
-import DataDrivenForm from '@src/index';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks';
+import { DataDrivenForm } from '@src/index';
 import { StorybookProviderDecorator } from '@src/StorybookProviderDecorator';
 import Datepicker from '@src/components/fields/Datepicker';
 import { getFieldWrapper } from '@src/stories/getFieldWrapper';
@@ -9,47 +9,46 @@ import { getFieldWrapper } from '@src/stories/getFieldWrapper';
   component={DataDrivenForm}
   decorators={[StorybookProviderDecorator]}
   tags={['autodocs']}
+  argTypes={{
+    label: { control: 'text' },
+    isDisabled: { control: 'boolean' },
+    initialDate: { control: 'date' },
+    minDate: { control: 'date' },
+    maxDate: { control: 'date' },
+  }}
 />
+
+# DatepickerField
 
 <Canvas>
   <Story
     name="Datepicker"
+    args={{
+      label: 'Datum první registrace',
+      isDisabled: false,
+      initialDate: new Date().toISOString(),
+      minDate: new Date().toISOString(),
+      maxDate: new Date().toISOString(),
+    }}
   >
-    {() => (
+    {(args) => (
       <DataDrivenForm
         schema={getFieldWrapper({
           title: 'Datepicker',
           sectionContent: [
             {
-              component: 'grid',
-              css: {
-                rowGap: {_: '2.5rem', sm: '0'},
-                gridTemplateColumns: {sm: '1fr 1.5rem 1fr'},
-                gridTemplateRows: {sm: 'auto auto'},
-                columnGap: {sm: '0'},
-              },
-              name: "datepicker",
-              fields: [
-                {
-                  component: 'date-picker',
-                  name: 'vehicle.leadinDate',
-                  isRequired: true,
-                  validate: [
-                    { type: 'date' }
-                  ],
-                  label: 'Datum první registrace',
-                  defaultCalendarType: 'year',
-                  initialDate: new Date().toISOString(),
-                  minDate: new Date().toISOString(),
-                  maxDate: new Date().toISOString(),
-                },
-              ]
+              component: 'date-picker',
+              name: 'vehicle.leadinDate',
+              label: args.label,
+              isDisabled: args.isDisabled,
+              initialDate: args.initialDate,
+              minDate: args.minDate,
+              maxDate: args.maxDate,
             }
           ],
         })}
       />
     )}
-
   </Story>
 </Canvas>
 

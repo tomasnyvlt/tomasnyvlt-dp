@@ -1,5 +1,5 @@
-import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
-import DataDrivenForm from "@src/index";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/blocks";
+import { DataDrivenForm } from "@src/index";
 import { StorybookProviderDecorator } from "@src/StorybookProviderDecorator";
 import CardPerson from "@src/components/contents/CardPerson";
 import { getFieldWrapper } from "@src/stories/getFieldWrapper";
@@ -10,6 +10,8 @@ import { getFieldWrapper } from "@src/stories/getFieldWrapper";
   decorators={[StorybookProviderDecorator]}
   tags={["autodocs"]}
 />
+
+# Card Person
 
 <Canvas>
   <Story

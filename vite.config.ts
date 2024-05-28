@@ -16,7 +16,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: 'src/index.ts',
-      name: 'DP',
+      name: 'tomasnyvlt-dp',
       formats: ['es', 'cjs'],
       fileName: (format) => `index.${format}.js`,
     },

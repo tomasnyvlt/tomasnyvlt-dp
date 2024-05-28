@@ -1,5 +1,5 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
-import DataDrivenForm from '@src/index';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks';
+import { DataDrivenForm } from '@src/index';
 import { StorybookProviderDecorator } from '@src/StorybookProviderDecorator';
 import Heading from '@src/components/contents/Heading';
 import { getFieldWrapper } from '@src/stories/getFieldWrapper';
@@ -11,33 +11,33 @@ import { getFieldWrapper } from '@src/stories/getFieldWrapper';
   tags={['autodocs']}
 />
 
+# Heading
+
 <Canvas>
   <Story name="Heading">
-    {() => {
-      return (
-        <DataDrivenForm
-          schema={getFieldWrapper({
-            title: 'Heading',
-            sectionContent: [
-              {
-                component: 'section',
-                name: '-',
-                css: {
-                  mt: '3rem',
-                },
-                fields: [
-                  {
-                    component: 'heading',
-                    name: 'Heading',
-                    initialValue: 'Nadpis',
-                  },
-                ],
+    {() => (
+      <DataDrivenForm
+        schema={getFieldWrapper({
+          title: 'Heading',
+          sectionContent: [
+            {
+              component: 'section',
+              name: '-',
+              css: {
+                mt: '3rem',
               },
-            ],
-          })}
-        />
-      );
-    }}
+              fields: [
+                {
+                  component: 'heading',
+                  name: 'Heading',
+                  initialValue: 'Nadpis',
+                },
+              ],
+            },
+          ],
+        })}
+      />
+    )}
   </Story>
 </Canvas>
 

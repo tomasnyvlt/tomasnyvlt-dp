@@ -1,5 +1,5 @@
-import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
-import DataDrivenForm from "@src/index";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/blocks";
+import { DataDrivenForm } from "@src/index";
 import { StorybookProviderDecorator } from "@src/StorybookProviderDecorator";
 import RangeField from "@src/components/fields/RangeField";
 import { getFieldWrapper } from "@src/stories/getFieldWrapper";
@@ -14,8 +14,11 @@ import { getFieldWrapper } from "@src/stories/getFieldWrapper";
     min: { control: "number" },
     max: { control: "number" },
     step: { control: "number" },
+    isDisabled: { control: "boolean" },
   }}
 />
+
+# RangeField
 
 <Canvas>
   <Story
@@ -24,7 +27,8 @@ import { getFieldWrapper } from "@src/stories/getFieldWrapper";
       label: "Obchodní sleva na povinné ručení",
       min: 0,
       max: 100,
-      step: 1
+      step: 1,
+      isDisabled: false
     }}
   >
     {(args) => (
@@ -35,9 +39,11 @@ import { getFieldWrapper } from "@src/stories/getFieldWrapper";
             {
               component: "range-field",
               name: "storybook.RangeField",
+              label: args.label,
               min: args.min,
               max: args.max,
-              step: args.step
+              step: args.step,
+              isDisabled: args.isDisabled
             },
           ],
         })}

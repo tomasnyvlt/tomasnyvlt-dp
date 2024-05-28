@@ -1,56 +1,54 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
-import DataDrivenForm from '@src/index';
-import { StorybookProviderDecorator } from '@src/StorybookProviderDecorator';
-import Select2Field from '@src/components/fields/Select2Field';
-import { getFieldWrapper } from '@src/stories/getFieldWrapper';
-import { confVehicleInsuranceFeEnumsVehicleUsePurposeFe } from '../../../../diplomova-prace-next/codetables/generated/conf-vehicle-insurance-fe-enums-vehicle-use-purpose-fe.js';
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/blocks";
+import { DataDrivenForm } from "@src/index";
+import { StorybookProviderDecorator } from "@src/StorybookProviderDecorator";
+import SelectField from "@src/components/fields/SelectField";
+import { getFieldWrapper } from "@src/stories/getFieldWrapper";
 
 <Meta
   title="Fields / SelectField"
   component={DataDrivenForm}
   decorators={[StorybookProviderDecorator]}
-  tags={['autodocs']}
+  tags={["autodocs"]}
+  argTypes={{
+    label: { control: "text" },
+    options: { control: "object" },
+    isDisabled: { control: "boolean" },
+  }}
 />
+
+# SelectField
 
 <Canvas>
   <Story
     name="SelectField"
+    args={{
+      label: 'Select Field',
+      options: [
+        { label: 'Option 1', value: '1' },
+        { label: 'Option 2', value: '2' },
+      ],
+      isDisabled: false,
+    }}
   >
-    {() => (
+    {(args) => (
       <DataDrivenForm
         schema={getFieldWrapper({
           title: 'SelectField',
           sectionContent: [
             {
-              // COMMON, (BEZNE UZITTI VOZIDLA )
               component: 'select-field',
-              name: 'vehicle.usePurposeCode',
-              label: 'Způsob užití vozidla',
-              initialValue: {
-                label:
-                confVehicleInsuranceFeEnumsVehicleUsePurposeFe?.[0]
-                  .langDescription,
-                value: confVehicleInsuranceFeEnumsVehicleUsePurposeFe?.[0].code,
-              },
-              isRequired: true,
-              helper:
-                '{"blocks":[{"key":"cssu2","text":"Co myslíme způsobem užití vozidla?","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[{"offset":0,"length":34,"key":0}],"data":{}}],"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"url":"#modal=usePurposeCode","targetOption":"_self"}}}}',
-              options: confVehicleInsuranceFeEnumsVehicleUsePurposeFe?.map(
-                (type) => ({
-                  label: type.langDescription,
-                  value: type.code,
-                })
-              ),
-              validate: [{ type: 'required', message: 'Prosím vyberte' }],
+              name: 'storybook.selectField',
+              label: args.label,
+              options: args.options,
+              isDisabled: args.isDisabled,
             },
           ],
         })}
       />
     )}
-
   </Story>
 </Canvas>
 
 ## Component Props
 
-<ArgsTable of={Select2Field} />
+<ArgsTable of={SelectField} />
