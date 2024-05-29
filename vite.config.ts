@@ -37,7 +37,7 @@ export default defineConfig({
       jsxRuntime: 'automatic', // Add this line
     }),
     svgr({
-      //include: '**/*.svg?react',
+      include: '**/*.svg?react',
     }),
   ],
   resolve: {

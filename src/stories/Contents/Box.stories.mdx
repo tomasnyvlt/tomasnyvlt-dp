@@ -1,0 +1,46 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks';
+import { DataDrivenForm } from '@src/index';
+import { StorybookProviderDecorator } from '@src/StorybookProviderDecorator';
+import Box from '@src/components/contents/Box';
+import { getFieldWrapper } from '@src/stories/getFieldWrapper';
+
+<Meta
+  title="Contents / Box"
+  component={DataDrivenForm}
+  decorators={[StorybookProviderDecorator]}
+  tags={['autodocs']}
+/>
+
+# Box
+
+<Canvas>
+  <Story name="Box">
+    {() => (
+      <DataDrivenForm
+        schema={getFieldWrapper({
+          title: 'Box',
+          sectionContent: [
+            {
+              component: 'section',
+              name: 'storybook.box',
+              css: {
+                mt: '3rem',
+              },
+              fields: [
+                {
+                  component: 'box',
+                  name: 'Box',
+                  css: { w: "100px", h: "100px", bg: "red"}
+                },
+              ],
+            },
+          ],
+        })}
+      />
+    )}
+  </Story>
+</Canvas>
+
+## Component Props
+
+<ArgsTable of={Box} />

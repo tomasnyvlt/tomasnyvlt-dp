@@ -12,7 +12,7 @@ import { CheckboxButtonType } from '@src/types';
 import ArrowDownIcon from '@src/components/other/icons/24/arrow-down.svg?react';
 import DirectButton from '@src/components/other/DirectButton';
 
-const CheckboxButton: FC<CheckboxButtonType> = ({
+const CheckboxButtonField: FC<CheckboxButtonType> = ({
   css,
   withIcon,
   ...props
@@ -66,4 +66,4 @@ const CheckboxButton: FC<CheckboxButtonType> = ({
   );
 };
 
-export default CheckboxButton;
+export default CheckboxButtonField;

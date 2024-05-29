@@ -26,7 +26,7 @@ import RZFetchField from '@src/components/fetchers/RZFetchField';
 import SpzFetchField from '@src/components/fetchers/SpzFetchField';
 import AssistanceModal from '@src/components/fields/AssistanceModal';
 import ButtonField from '@src/components/fields/ButtonField';
-import CheckboxButton from '@src/components/fields/CheckboxButton';
+import CheckboxButtonField from '@src/components/fields/CheckboxButtonField.tsx';
 import CheckboxField from '@src/components/fields/CheckboxField';
 import DatePicker from '@src/components/fields/DatePicker';
 import EditField from '@src/components/fields/EditField';
@@ -133,7 +133,7 @@ const componentMapper: ComponentMapper = {
   },
   'checkbox-button': {
     component: FieldValuesListener,
-    children: createElement(CheckboxButton),
+    children: createElement(CheckboxButtonField),
   },
   'checkbox-field': {
     component: FieldValuesListener,

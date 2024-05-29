@@ -1,46 +1,37 @@
 import { Meta, Story, Canvas, ArgsTable } from "@storybook/blocks";
 import { DataDrivenForm } from "@src/index";
 import { StorybookProviderDecorator } from "@src/StorybookProviderDecorator";
-import SelectField from "@src/components/fields/Select2Field";
+import CheckboxButtonField from "@src/components/fields/CheckboxButtonField";
 import { getFieldWrapper } from "@src/stories/getFieldWrapper";
 
 <Meta
-  title="Fields / SelectField"
-  component={DataDrivenForm}
+  title="Fields / CheckboxButtonField"
+  component={CheckboxButtonField}
   decorators={[StorybookProviderDecorator]}
   tags={["autodocs"]}
   argTypes={{
     label: { control: "text" },
-    options: { control: "object" },
-    isDisabled: { control: "boolean" },
   }}
 />
 
-# SelectField
+# CheckboxButtonField
 
 <Canvas>
   <Story
-    name="SelectField"
+    name="CheckboxButtonField"
     args={{
-      label: 'Select Field',
-      options: [
-        { label: 'Option 1', value: '1' },
-        { label: 'Option 2', value: '2' },
-      ],
-      isDisabled: false,
+      label: "CheckboxButton Field",
     }}
   >
     {(args) => (
       <DataDrivenForm
         schema={getFieldWrapper({
-          title: 'SelectField',
+          title: 'CheckboxButtonField',
           sectionContent: [
             {
-              component: 'select-field',
-              name: 'storybook.selectField',
+              component: 'checkbox-button',
+              name: 'storybook.CheckboxButtonField',
               label: args.label,
-              options: args.options,
-              isDisabled: args.isDisabled,
             },
           ],
         })}
@@ -51,4 +42,4 @@ import { getFieldWrapper } from "@src/stories/getFieldWrapper";
 
 ## Component Props
 
-<ArgsTable of={SelectField} />
+<ArgsTable of={CheckboxButtonField} />

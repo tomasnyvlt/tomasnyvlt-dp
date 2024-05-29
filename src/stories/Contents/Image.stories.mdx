@@ -1,0 +1,50 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks';
+import { DataDrivenForm } from '@src/index';
+import { StorybookProviderDecorator } from '@src/StorybookProviderDecorator';
+import ImageOrLottie from '@src/components/contents/ImageOrLottie';
+import { getFieldWrapper } from '@src/stories/getFieldWrapper';
+
+<Meta
+  title="Contents / ImageOrLottie"
+  component={DataDrivenForm}
+  decorators={[StorybookProviderDecorator]}
+  tags={['autodocs']}
+/>
+
+# Image
+
+<Canvas>
+  <Story name="Image">
+    {() => (
+      <DataDrivenForm
+        schema={getFieldWrapper({
+          title: 'Image',
+          sectionContent: [
+            {
+              component: 'section',
+              name: '-',
+              css: {
+                mt: '3rem',
+              },
+              fields: [
+                {
+                  component: 'image',
+                  name: 'Image',
+                  file: {
+                    id: "id-random-image",
+                    caption: "Osobní automobil",
+                    url: "http://placehold.it/200x200"
+                  },
+                },
+              ],
+            },
+          ],
+        })}
+      />
+    )}
+  </Story>
+</Canvas>
+
+## Component Props
+
+<ArgsTable of={ImageOrLottie} />

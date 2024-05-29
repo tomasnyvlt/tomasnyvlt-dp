@@ -1,0 +1,47 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks';
+import { DataDrivenForm } from '@src/index';
+import { StorybookProviderDecorator } from '@src/StorybookProviderDecorator';
+import Icon from '@src/components/contents/Icon';
+import { getFieldWrapper } from '@src/stories/getFieldWrapper';
+import InfoIcon from '@src/icons/24/info.svg?react';
+
+<Meta
+  title="Contents / Icon"
+  component={DataDrivenForm}
+  decorators={[StorybookProviderDecorator]}
+  tags={['autodocs']}
+/>
+
+# Icon
+
+<Canvas>
+  <Story name="Icon">
+    {() => (
+      <DataDrivenForm
+        schema={getFieldWrapper({
+          title: 'Icon',
+          sectionContent: [
+            {
+              component: 'section',
+              name: '-',
+              css: {
+                mt: '3rem',
+              },
+              fields: [
+                {
+                  component: 'icon',
+                  name: 'Icon',
+                  icon: InfoIcon,
+                },
+              ],
+            },
+          ],
+        })}
+      />
+    )}
+  </Story>
+</Canvas>
+
+## Component Props
+
+<ArgsTable of={Icon} />

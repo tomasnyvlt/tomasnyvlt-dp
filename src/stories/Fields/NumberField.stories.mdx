@@ -1,0 +1,72 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/blocks";
+import { DataDrivenForm } from "@src/index";
+import { StorybookProviderDecorator } from "@src/StorybookProviderDecorator";
+import NumberField from "@src/components/fields/NumberField";
+import { getFieldWrapper } from "@src/stories/getFieldWrapper";
+
+<Meta
+  title="Fields / NumberField"
+  component={DataDrivenForm}
+  decorators={[StorybookProviderDecorator]}
+  tags={["autodocs"]}
+  argTypes={{
+    labelText: { control: "text" },
+    isDisabled: { control: "boolean" },
+    textarea: { control: "boolean" },
+    hideField: { control: "boolean" },
+    initialValue: { control: "number" },
+    disabledAdding: { control: "boolean" },
+    disabledSubtracting: { control: "boolean" },
+    changeBy: { control: "number" },
+    isMonetaryValue: { control: "boolean" },
+    minimumValue: { control: "number" }
+  }}
+/>
+
+# NumberField
+
+<Canvas>
+  <Story
+    name="NumberField"
+    args={{
+      labelText: "Number Field",
+      isDisabled: false,
+      textarea: false,
+      hideField: false,
+      initialValue: 1,
+      disabledAdding: false,
+      disabledSubtracting: false,
+      changeBy: 1,
+      isMonetaryValue: false,
+      minimumValue: 0
+    }}
+  >
+    {(args) => (
+      <DataDrivenForm
+        schema={getFieldWrapper({
+          title: 'NumberField',
+          sectionContent: [
+            {
+              component: 'number-field',
+              name: 'storybook.numberField',
+              labelText: args.labelText,
+              isDisabled: args.isDisabled,
+              textarea: args.textarea,
+              hideField: args.hideField,
+              initialValue: args.initialValue,
+              disabledAdding: args.disabledAdding,
+              disabledSubtracting: args.disabledSubtracting,
+              changeBy: args.changeBy,
+              isMonetaryValue: args.isMonetaryValue,
+              minimumValue: args.minimumValue
+            },
+          ],
+        })}
+      />
+    )}
+  </Story>
+</Canvas>
+
+## Component Props
+
+<ArgsTable of={NumberField} />

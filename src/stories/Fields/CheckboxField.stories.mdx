@@ -1,0 +1,96 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/blocks";
+import { DataDrivenForm } from "@src/index";
+import { StorybookProviderDecorator } from "@src/StorybookProviderDecorator";
+import CheckboxField from "@src/components/fields/CheckboxField";
+import { getFieldWrapper } from "@src/stories/getFieldWrapper";
+
+<Meta
+  title="Fields / CheckboxField"
+  component={DataDrivenForm}
+  decorators={[StorybookProviderDecorator]}
+  tags={["autodocs"]}
+  argTypes={{
+    label: { control: "text" },
+    isDisabled: { control: "boolean" },
+    textarea: { control: "boolean" },
+    checkboxColor: { control: { type: "select", options: ["green", "white"] } },
+    checkboxBorderColor: { control: { type: "select", options: ["green", "white", "indigo2"] } },
+    description: { control: "text" },
+    labelCss: { control: "object" },
+    onClick: { control: "object" },
+    checkboxAlignTop: { control: "boolean" },
+    withArrowDownIcon: { control: "boolean" },
+    hiddenLabel: { control: "text" },
+    hideField: { control: "boolean" },
+    hideInRadioBoxContainer: { control: "boolean" },
+    helper: { control: "text" },
+    helperCss: { control: "object" },
+    variant: { control: { type: "select", options: ["sm", "md", "cart"] } },
+    initialValue: { control: "boolean" },
+    defaultValue: { control: "text" }
+  }}
+/>
+
+# CheckboxField
+
+<Canvas>
+  <Story
+    name="CheckboxField"
+    args={{
+      label: "Checkbox Field",
+      isDisabled: false,
+      textarea: false,
+      checkboxColor: "green",
+      checkboxBorderColor: "green",
+      description: "",
+      labelCss: {},
+      onClick: () => {},
+      checkboxAlignTop: false,
+      withArrowDownIcon: false,
+      hiddenLabel: "",
+      hideField: false,
+      hideInRadioBoxContainer: false,
+      helper: "",
+      helperCss: {},
+      variant: "md",
+      initialValue: false,
+      defaultValue: ""
+    }}
+  >
+    {(args) => (
+      <DataDrivenForm
+        schema={getFieldWrapper({
+          title: 'CheckboxField',
+          sectionContent: [
+            {
+              component: 'checkbox-field',
+              name: 'storybook.CheckboxField',
+              label: args.label,
+              isDisabled: args.isDisabled,
+              textarea: args.textarea,
+              checkboxColor: args.checkboxColor,
+              checkboxBorderColor: args.checkboxBorderColor,
+              description: args.description,
+              labelCss: args.labelCss,
+              onClick: args.onClick,
+              checkboxAlignTop: args.checkboxAlignTop,
+              withArrowDownIcon: args.withArrowDownIcon,
+              hiddenLabel: args.hiddenLabel,
+              hideField: args.hideField,
+              hideInRadioBoxContainer: args.hideInRadioBoxContainer,
+              helper: args.helper,
+              helperCss: args.helperCss,
+              variant: args.variant,
+              initialValue: args.initialValue,
+              defaultValue: args.defaultValue
+            },
+          ],
+        })}
+      />
+    )}
+  </Story>
+</Canvas>
+
+## Component Props
+
+<ArgsTable of={CheckboxField} />

@@ -1,0 +1,48 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks';
+import { DataDrivenForm } from '@src/index';
+import { StorybookProviderDecorator } from '@src/StorybookProviderDecorator';
+import Text from '@src/components/contents/Text';
+import { getFieldWrapper } from '@src/stories/getFieldWrapper';
+
+<Meta
+  title="Contents / Text"
+  component={DataDrivenForm}
+  decorators={[StorybookProviderDecorator]}
+  tags={['autodocs']}
+/>
+
+# Text
+
+<Canvas>
+  <Story name="Text">
+    {() => (
+      <DataDrivenForm
+        schema={getFieldWrapper({
+          title: 'Text',
+          sectionContent: [
+            {
+              component: 'section',
+              name: '-',
+              css: {
+                mt: '3rem',
+              },
+              fields: [
+                {
+                  component: 'text',
+                  name: 'Text',
+                  initialValue: 'Hover me for tooltip.... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae porttitor lacus. Mauris mi massa, vehicula at eros elementum, dictum cursus neque. Donec iaculis congue ipsum luctus bibendum. Nullam faucibus lacus risus, non cursus leo fermentum sit amet. Ut in tristique lorem, at dignissim sem. Aliquam erat volutpat. Suspendisse iaculis aliquet dictum. Donec sollicitudin odio dui, in sagittis neque lobortis nec. Nullam sem tellus, laoreet quis lacus in, laoreet luctus sapien. Ut nec lorem ut leo sodales sollicitudin quis sollicitudin erat. Integer tristique leo a mollis elementum.',
+                  tooltip: "Tooltip",
+                  tooltipPosition: "top"
+                },
+              ],
+            },
+          ],
+        })}
+      />
+    )}
+  </Story>
+</Canvas>
+
+## Component Props
+
+<ArgsTable of={Text} />

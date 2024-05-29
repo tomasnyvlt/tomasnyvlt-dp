@@ -1,0 +1,47 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks';
+import { DataDrivenForm } from '@src/index';
+import { StorybookProviderDecorator } from '@src/StorybookProviderDecorator';
+import Section from '@src/components/contents/Section';
+import { getFieldWrapper } from '@src/stories/getFieldWrapper';
+
+<Meta
+  title="Contents / Section"
+  component={DataDrivenForm}
+  decorators={[StorybookProviderDecorator]}
+  tags={['autodocs']}
+/>
+
+# Section
+
+<Canvas>
+  <Story name="Section">
+    {() => (
+      <DataDrivenForm
+        schema={getFieldWrapper({
+          title: 'Section',
+          sectionContent: [
+            {
+              component: 'section',
+              name: 'storybook.Section',
+              variant: "withBorder",
+              css: {
+                mt: '3rem',
+              },
+              fields: [
+                {
+                  component: 'box',
+                  name: 'Box v sekci',
+                  css: { w: "100px", h: "100px", bg: "red", mt: "2rem" }
+                },
+              ],
+            },
+          ],
+        })}
+      />
+    )}
+  </Story>
+</Canvas>
+
+## Component Props
+
+<ArgsTable of={Section} />

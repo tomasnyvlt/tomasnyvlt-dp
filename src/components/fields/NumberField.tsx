@@ -12,8 +12,6 @@ import { useFieldError } from '@src/hooks/useFieldError';
 import MinusIcon from '@src/components/other/icons/24/minus.svg?react';
 import PlusIcon from '@src/components/other/icons/24/plus.svg?react';
 
-// TODO RK - type should be taken from
-// TODO RK - @src/types/formFields.ts
 export interface NumberFieldProps extends SystemProps {
   name: string;
   labelText?: string | ReactNode;
@@ -177,10 +175,6 @@ const NumberField: FC<NumberFieldProps> = ({
             {labelText && (
               <>
                 {labelText}
-                {/*
-                  TODO RK - props.required will be always false because
-                  it is not passed to the component because of mismatched types!
-                */}
                 {props.required && <x.span>*</x.span>}
               </>
             )}

@@ -1,0 +1,41 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/blocks";
+import ResetLocalStorageModal from '@src/components/modals/ResetLocalStorageModal';
+import { StorybookProviderDecorator } from "@src/StorybookProviderDecorator";
+
+
+<Meta
+  title="Components / ResetLocalStorageModal"
+  component={ResetLocalStorageModal}
+  decorators={[StorybookProviderDecorator]}
+  tags={["autodocs"]}
+  argTypes={{
+    change: { control: "object" },
+    localStorageKey: { control: "text" }
+  }}
+/>
+
+# ResetLocalStorageModal
+
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      change: (name, value) => console.log(name, value),
+      localStorageKey: "fillform_modal_key"
+    }}
+    decorators={[
+      (Story) => {
+        const value = {"vehicle":{"registrationPlate":"8AM4018","type":"PERSONAL_VEHICLE","category":"M1","enginePower":96,"enginePowerNumeric":96,"engineDisplacement":1498,"maxWeight":1800,"actualValueVATIncluded":true,"usePurposeCode":"COMMON","mileage":"MAX_150000","securityLevel":["NO_SECURITY"],"registrationBookNumber":"UL697491","specialRegistrationPlate":null,"countPlace":5,"fuelTypeCode":"BENZINE","temp":{"vin":true},"leadinDate":"2021-02-04T00:00:00.000Z","leadinDateInFuture":false,"manufacturerModelCode":"VOLKSWAGEN_GOLF","model":"GOLF","manufacturer":"Volkswagen"},"preloaded":true,"frequencyCode":"ANNUALY","getPackages":true,"getApplicableLimitsOnly":true,"getLimits":true,"beginDate":"2024-05-29T21:31:10.549Z","temp":{"isInternalUser":false,"isAgent":false},"partner":{"legalFormCode":"PERSON","phone":"+420739968866","email":"tomaskyvl@direct.cz","permanentAddress":{"zip":13000},"contactAddress":{},"firstName":"Tonda","lastName":"Vomáčka","namePrefix":"Král kodérů","personalIn":"9909244092","channelType":"EMAIL"},"mtpl":{"salesDiscount":0.15},"assistance":{"malfunctionAssistance":false},"additionals":{},"casco":{"salesDiscount":0.25},"getFeConfig":true,"dontHaveSpz":false};
+        window.localStorage.setItem( 'fillform_modal_key', JSON.stringify(value) );
+        return Story();
+      },
+    ]}
+  >
+    {(args) => <ResetLocalStorageModal {...args} />}
+  </Story>
+</Canvas>
+
+## Component Props
+
+<ArgsTable of={ResetLocalStorageModal} />
