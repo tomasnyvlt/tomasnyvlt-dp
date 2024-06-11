@@ -12,7 +12,7 @@
     /* Bundler mode */
     "moduleResolution": "Node",
     "allowImportingTsExtensions": true,
-    "allowSyntheticDefaultImports": true, // ? added
+    "esModuleInterop": true,
     "declaration": true,
     "emitDeclarationOnly": true,
     "resolveJsonModule": true,

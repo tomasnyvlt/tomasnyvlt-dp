@@ -2,6 +2,7 @@ import { GTMProvider } from '@elgorditosalsero/react-gtm-hook';
 import { ThemeProvider } from '@xstyled/emotion';
 import { AnolisProvider } from 'anolis-ui';
 import { ReactNode } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { theme } from './theme';
 import { customXstyledTheme } from './theme/xstyled';
 
@@ -17,10 +18,12 @@ export const Provider = ({
   // anolisTheme,
 }: ProviderProps) => {
   return (
-    <GTMProvider state={undefined}>
-      <ThemeProvider theme={customXstyledTheme}>
-        <AnolisProvider theme={theme}>{children}</AnolisProvider>
-      </ThemeProvider>
-    </GTMProvider>
+    <BrowserRouter>
+      <GTMProvider state={undefined}>
+        <ThemeProvider theme={customXstyledTheme}>
+          <AnolisProvider theme={theme}>{children}</AnolisProvider>
+        </ThemeProvider>
+      </GTMProvider>
+    </BrowserRouter>
   );
 };

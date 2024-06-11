@@ -3,7 +3,7 @@ import { useFormApi } from "@data-driven-forms/react-form-renderer";
 import { format, isBefore, lastDayOfMonth } from "date-fns";
 import { cs } from "date-fns/locale";
 import { ChangeEvent, FC, MouseEvent, useContext, useEffect, useId, useState } from "react";
-import ReactDatePicker from "react-datepicker";
+import _ReactDatePicker from "react-datepicker";
 
 import CalendarContainer from "@src/components/fields/DatePicker/components/CalendarContainer";
 import CalendarHeader from "@src/components/fields/DatePicker/components/CalendarHeader";
@@ -18,6 +18,8 @@ import getInputDateValue from "@src/components/fields/DatePicker/utils/getInputD
 import getParsedDate from "@src/components/fields/DatePicker/utils/getParsedDate";
 
 import "react-datepicker/dist/react-datepicker.css";
+
+const ReactDatePicker: typeof _ReactDatePicker = (_ReactDatePicker as any).default;
 
 const DatePicker: FC = () => {
   const { calendarType, setCalendarType, calendarButtonId, parsedDateRange, input, meta } =
