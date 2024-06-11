@@ -21,14 +21,16 @@ export default defineConfig({
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: [
-        ...Object.keys(pkg.dependencies),
-        ...Object.keys(pkg.peerDependencies),
-      ],
+      external: (s) =>
+        [
+          ...Object.keys(pkg.dependencies),
+          ...Object.keys(pkg.peerDependencies),
+        ].some((dep) => s.startsWith(dep)),
       output: {
         globals: {},
       },
     },
+    minify: false,
     sourcemap: true,
     emptyOutDir: true,
   },

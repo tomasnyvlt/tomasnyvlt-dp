@@ -10,12 +10,12 @@ overrides:
 dependencies:
   '@data-driven-forms/common':
     specifier: '>=3'
-    version: 3.22.2(react-dom@18.3.1)(react@18.3.1)
+    version: 3.22.4(react-dom@18.3.1)(react@18.3.1)
   '@data-driven-forms/react-form-renderer':
     specifier: '>=3'
-    version: 3.22.2(react-dom@18.3.1)(react@18.3.1)
+    version: 3.22.4(react-dom@18.3.1)(react@18.3.1)
   '@elgorditosalsero/react-gtm-hook':
-    specifier: ^2.6.0
+    specifier: ^2.7.2
     version: 2.7.2(react@18.3.1)
   '@tippyjs/react':
     specifier: ^4.2.6
@@ -36,7 +36,7 @@ dependencies:
     specifier: ^1.2.1
     version: 1.2.1
   date-fns:
-    specifier: ^2.29.3
+    specifier: ^2.30.0
     version: 2.30.0
   deep-object-diff:
     specifier: ^1.1.9
@@ -48,7 +48,7 @@ dependencies:
     specifier: ^1.4.1
     version: 1.4.1(draft-js@0.11.7)(immutable@3.8.2)
   framer-motion:
-    specifier: ^10.6.1
+    specifier: ^10.18.0
     version: 10.18.0(react-dom@18.3.1)(react@18.3.1)
   html-react-parser:
     specifier: ^2.0.0
@@ -57,31 +57,31 @@ dependencies:
     specifier: '>=14'
     version: 14.2.3(@babel/core@7.24.6)(react-dom@18.3.1)(react@18.3.1)
   react-datepicker:
-    specifier: ^4.8.0
+    specifier: ^4.25.0
     version: 4.25.0(react-dom@18.3.1)(react@18.3.1)
   react-final-form-listeners:
     specifier: ^1.0.3
     version: 1.0.3(final-form@4.20.10)(prop-types@15.8.1)(react-final-form@6.5.9)(react@18.3.1)
   react-icons:
-    specifier: ^4.10.1
+    specifier: ^4.12.0
     version: 4.12.0(react@18.3.1)
   react-loading-skeleton:
-    specifier: ^3.1.0
+    specifier: ^3.4.0
     version: 3.4.0(react@18.3.1)
   react-number-format:
-    specifier: ^5.2.2
+    specifier: ^5.3.4
     version: 5.3.4(react-dom@18.3.1)(react@18.3.1)
   react-router-dom:
-    specifier: ^6.22.1
+    specifier: ^6.23.1
     version: 6.23.1(react-dom@18.3.1)(react@18.3.1)
   react-select:
-    specifier: ^5.4.0
+    specifier: ^5.8.0
     version: 5.8.0(@types/react@18.3.3)(react-dom@18.3.1)(react@18.3.1)
   tsc-alias:
     specifier: ^1.8.10
     version: 1.8.10
   zustand:
-    specifier: ^4.4.1
+    specifier: ^4.5.2
     version: 4.5.2(@types/react@18.3.3)(react@18.3.1)
 
 devDependencies:
@@ -89,28 +89,28 @@ devDependencies:
     specifier: ^29.7.0
     version: 29.7.0
   '@storybook/addon-essentials':
-    specifier: ^7.0.27
+    specifier: ^7.6.19
     version: 7.6.19(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1)(react@18.3.1)
   '@storybook/addon-interactions':
-    specifier: ^7.0.27
+    specifier: ^7.6.19
     version: 7.6.19
   '@storybook/addon-links':
-    specifier: ^7.0.27
+    specifier: ^7.6.19
     version: 7.6.19(react@18.3.1)
   '@storybook/blocks':
-    specifier: ^7.0.27
+    specifier: ^7.6.19
     version: 7.6.19(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1)(react@18.3.1)
   '@storybook/builder-vite':
-    specifier: ^7.0.27
+    specifier: ^7.6.19
     version: 7.6.19(typescript@5.4.5)(vite@4.5.3)
   '@storybook/react':
-    specifier: ^7.0.27
+    specifier: ^7.6.19
     version: 7.6.19(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5)
   '@storybook/react-vite':
-    specifier: ^7.0.27
+    specifier: ^7.6.19
     version: 7.6.19(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5)(vite@4.5.3)
   '@storybook/testing-library':
-    specifier: ^0.0.14-next.2
+    specifier: 0.0.14-next.2
     version: 0.0.14-next.2
   '@testing-library/jest-dom':
     specifier: ^6.4.5
@@ -119,37 +119,37 @@ devDependencies:
     specifier: ^14.3.1
     version: 14.3.1(react-dom@18.3.1)(react@18.3.1)
   '@types/draft-js':
-    specifier: ^0.11.9
+    specifier: ^0.11.18
     version: 0.11.18
   '@types/react':
-    specifier: ^18.2.14
+    specifier: ^18.3.3
     version: 18.3.3
   '@types/react-datepicker':
-    specifier: ^4.10.0
+    specifier: ^4.19.6
     version: 4.19.6(react-dom@18.3.1)(react@18.3.1)
   '@types/react-dom':
-    specifier: ^18.2.6
+    specifier: ^18.3.0
     version: 18.3.0
   '@types/react-final-form-listeners':
     specifier: ^1.0.3
     version: 1.0.3
   '@typescript-eslint/eslint-plugin':
-    specifier: ^6.0.0
+    specifier: ^6.21.0
     version: 6.21.0(@typescript-eslint/parser@6.21.0)(eslint@8.57.0)(typescript@5.4.5)
   '@typescript-eslint/parser':
-    specifier: ^6.0.0
+    specifier: ^6.21.0
     version: 6.21.0(eslint@8.57.0)(typescript@5.4.5)
   '@vitejs/plugin-react':
     specifier: ^4.3.0
     version: 4.3.0(vite@4.5.3)
   autoprefixer:
-    specifier: ^10.4.14
+    specifier: ^10.4.19
     version: 10.4.19(postcss@8.4.38)
   chromatic:
-    specifier: ^6.19.9
+    specifier: ^6.24.1
     version: 6.24.1
   eslint:
-    specifier: ^8.45.0
+    specifier: ^8.57.0
     version: 8.57.0
   eslint-config-airbnb:
     specifier: ^19.0.4
@@ -158,40 +158,40 @@ devDependencies:
     specifier: ^17.1.0
     version: 17.1.0(@typescript-eslint/eslint-plugin@6.21.0)(@typescript-eslint/parser@6.21.0)(eslint-plugin-import@2.29.1)(eslint@8.57.0)
   eslint-config-prettier:
-    specifier: ^8.8.0
+    specifier: ^8.10.0
     version: 8.10.0(eslint@8.57.0)
   eslint-plugin-import:
-    specifier: ^2.27.5
+    specifier: ^2.29.1
     version: 2.29.1(@typescript-eslint/parser@6.21.0)(eslint@8.57.0)
   eslint-plugin-jsx-a11y:
-    specifier: ^6.7.1
+    specifier: ^6.8.0
     version: 6.8.0(eslint@8.57.0)
   eslint-plugin-prettier:
-    specifier: ^5.0.0
+    specifier: ^5.1.3
     version: 5.1.3(eslint-config-prettier@8.10.0)(eslint@8.57.0)(prettier@3.2.5)
   eslint-plugin-react:
-    specifier: ^7.32.2
+    specifier: ^7.34.1
     version: 7.34.1(eslint@8.57.0)
   eslint-plugin-react-hooks:
-    specifier: ^4.6.0
+    specifier: ^4.6.2
     version: 4.6.2(eslint@8.57.0)
   eslint-plugin-react-refresh:
-    specifier: ^0.4.1
+    specifier: ^0.4.7
     version: 0.4.7(eslint@8.57.0)
   eslint-plugin-storybook:
-    specifier: ^0.6.12
+    specifier: ^0.6.15
     version: 0.6.15(eslint@8.57.0)(typescript@5.4.5)
   jsdom:
     specifier: ^22.1.0
     version: 22.1.0
   lint-staged:
-    specifier: ^13.2.3
+    specifier: ^13.3.0
     version: 13.3.0
   postcss:
-    specifier: ^8.4.26
+    specifier: ^8.4.38
     version: 8.4.38
   prettier:
-    specifier: ^3.0.0
+    specifier: ^3.2.5
     version: 3.2.5
   react:
     specifier: ^18.3.1
@@ -200,13 +200,13 @@ devDependencies:
     specifier: ^18.3.1
     version: 18.3.1(react@18.3.1)
   storybook:
-    specifier: ^7.0.27
+    specifier: ^7.6.19
     version: 7.6.19
   typescript:
     specifier: ^5.4.5
     version: 5.4.5
   vite:
-    specifier: ^4.4.0
+    specifier: ^4.5.3
     version: 4.5.3(@types/node@20.12.12)
   vite-plugin-dts:
     specifier: ^3.9.1
@@ -1480,6 +1480,13 @@ packages:
     dependencies:
       regenerator-runtime: 0.14.1
 
+  /@babel/runtime@7.24.7:
+    resolution: {integrity: sha512-UwgBRMjJP+xv857DCngvqXI3Iq6J4v0wXmwc6sapg+zyhbwmQX67LUEFrkK5tbyJ30jGuG3ZvWpBiB9LCy1kWw==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      regenerator-runtime: 0.14.1
+    dev: false
+
   /@babel/template@7.24.6:
     resolution: {integrity: sha512-3vgazJlLwNXi9jhrR1ef8qiB65L1RK90+lEQwv4OxveHnqC3BfmnHdgySwRLzf6akhlOYenT+b7AfWq+a//AHw==}
     engines: {node: '>=6.9.0'}
@@ -1524,8 +1531,8 @@ packages:
     dev: true
     optional: true
 
-  /@data-driven-forms/common@3.22.2(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-X/MUWH2DjbjZk4SUSGdMB8/JiDH9d5MkwRWloF0GaHr5HRPKY7xfBFWsOpAdK/awdCWtx1kaYLOVi/0auI/boA==}
+  /@data-driven-forms/common@3.22.4(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-r5mOk96OfbupWqF0Pi3NpP0djAg4q6sz+4KCH04xvLr+tVi7SswVOWejIfWoY70o0YYVLQM3enlkERNmoS5upA==}
     peerDependencies:
       react: ^16.13.1 || ^17.0.2 || ^18.0.0
       react-dom: ^16.13.1 || ^17.0.2 || ^18.0.0
@@ -1537,8 +1544,8 @@ packages:
       react-dom: 18.3.1(react@18.3.1)
     dev: false
 
-  /@data-driven-forms/react-form-renderer@3.22.2(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-QsfxshVowPEzJkCn2+3cOjdXLslfGW0kJ3c09hkUqftms7DvsZYgsa02e78qGxmDKZ/1/yVS6p/SJOPlTOzOfA==}
+  /@data-driven-forms/react-form-renderer@3.22.4(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-39tvEvBHn2vYtFaxigmgM26XZeec+xjxYzougi7eyr3QGheVvy8JO2nyzYBX1wKfyALhaonfQbi7m/ak1V0BNg==}
     peerDependencies:
       react: ^16.13.1 || ^17.0.2 || ^18.0.0
       react-dom: ^16.13.1 || ^17.0.2 || ^18.0.0
@@ -1694,7 +1701,7 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      '@babel/runtime': 7.24.6
+      '@babel/runtime': 7.24.7
       '@emotion/babel-plugin': 11.11.0
       '@emotion/is-prop-valid': 1.2.2
       '@emotion/react': 11.11.4(@types/react@18.3.3)(react@18.3.1)

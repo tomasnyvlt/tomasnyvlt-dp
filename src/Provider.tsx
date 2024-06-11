@@ -1,23 +1,25 @@
 import { GTMProvider } from '@elgorditosalsero/react-gtm-hook';
 import { ThemeProvider } from '@xstyled/emotion';
-import { AnolisProvider, AnolisTheme } from 'anolis-ui';
+import { AnolisProvider } from 'anolis-ui';
 import { ReactNode } from 'react';
+import { theme } from './theme';
+import { customXstyledTheme } from './theme/xstyled';
 
 export interface ProviderProps {
-  customXstyledTheme: Parameters<typeof ThemeProvider>[0]['theme'];
-  anolisTheme: AnolisTheme;
+  // customXstyledTheme: Parameters<typeof ThemeProvider>[0]['theme'];
+  // anolisTheme: AnolisTheme;
   children: ReactNode;
 }
 
 export const Provider = ({
   children,
-  customXstyledTheme,
-  anolisTheme,
+  // customXstyledTheme,
+  // anolisTheme,
 }: ProviderProps) => {
   return (
     <GTMProvider state={undefined}>
       <ThemeProvider theme={customXstyledTheme}>
-        <AnolisProvider theme={anolisTheme}>{children}</AnolisProvider>
+        <AnolisProvider theme={theme}>{children}</AnolisProvider>
       </ThemeProvider>
     </GTMProvider>
   );
