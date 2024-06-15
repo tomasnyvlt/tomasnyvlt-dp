@@ -19,7 +19,7 @@ jobs:
           node-version: '18'  # Specify the Node.js version you need
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Build Storybook
         run: npm run build-storybook  # Adjust this if your build command is different
