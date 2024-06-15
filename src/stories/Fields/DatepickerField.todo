@@ -1,7 +1,7 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks';
 import { DataDrivenForm } from '@src/index';
 import { StorybookProviderDecorator } from '@src/StorybookProviderDecorator';
-import Datepicker from '@src/components/fields/Datepicker';
+import DatePicker from '@src/components/fields/DatePicker';
 import { getFieldWrapper } from '@src/stories/getFieldWrapper';
 
 <Meta
@@ -22,19 +22,19 @@ import { getFieldWrapper } from '@src/stories/getFieldWrapper';
 
 <Canvas>
   <Story
-    name="Datepicker"
+    name="DatePicker"
     args={{
       label: 'Datum první registrace',
       isDisabled: false,
-      initialDate: new Date().toISOString(),
-      minDate: new Date().toISOString(),
-      maxDate: new Date().toISOString(),
+      initialDate: new Date().toISOString().split('T')[0],
+      minDate: new Date().toISOString().split('T')[0],
+      maxDate: new Date().toISOString().split('T')[0],
     }}
   >
     {(args) => (
       <DataDrivenForm
         schema={getFieldWrapper({
-          title: 'Datepicker',
+          title: 'DatePicker',
           sectionContent: [
             {
               component: 'date-picker',
@@ -54,4 +54,4 @@ import { getFieldWrapper } from '@src/stories/getFieldWrapper';
 
 ## Component Props
 
-<ArgsTable of={Datepicker} />
+<ArgsTable of={DatePicker} />
