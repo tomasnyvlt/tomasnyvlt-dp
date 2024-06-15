@@ -1,4 +1,4 @@
-import { FetcherResponseType, FormFetcherType } from '@src/TO_DELETE';
+import { FetcherResponseType, FormFetcherType } from '@src/formTypes';
 import { OptionType } from '@src/types';
 import {
   PremiumPriceType,

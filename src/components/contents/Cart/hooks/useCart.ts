@@ -13,7 +13,7 @@ import { CartDataType, ChangeProps } from '@src/components/contents/Cart/types';
 import { getCartDataFromFetcher } from '@src/components/contents/Cart/utils/getCartDataFromFetcher';
 import { useFormStoreContext } from '@src/hooks/useFormStoreContext';
 import { WizardType } from '@src/types';
-import { formFetcherType } from '@src/TO_DELETE';
+import { formFetcherType } from '@src/formTypes.ts';
 
 interface ExtendedCartDataType extends CartDataType {
   itemsCount: number;

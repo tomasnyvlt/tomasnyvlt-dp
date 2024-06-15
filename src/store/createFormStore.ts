@@ -1,5 +1,5 @@
-import { FetcherResponseType, FormFetcherType } from '@src/TO_DELETE';
-import config from '@src/TO_DELETE_config';
+import { FetcherResponseType, FormFetcherType } from '@src/formTypes';
+import config from '@src/config';
 import { formStoreInstance } from '@src/store/formStoreInstance';
 import {
   FormStateType,

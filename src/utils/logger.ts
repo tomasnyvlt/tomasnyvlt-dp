@@ -1,4 +1,4 @@
-import config from '@src/TO_DELETE_config';
+import config from '@src/config';
 
 export const logger = (message: any): void => {
   if (config.env === 'prod') return;

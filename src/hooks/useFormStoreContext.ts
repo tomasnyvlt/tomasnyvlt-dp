@@ -1,4 +1,4 @@
-import { FormFetcherType } from '@src/TO_DELETE';
+import { FormFetcherType } from '@src/formTypes';
 import {
   FormStoreContext,
   FormStoreContextType,

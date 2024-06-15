@@ -1,8 +1,7 @@
-import { CartDataType } from "@src/components/contents/Cart/types";
-import getFleetVehicleCartDataFromFetcher from "@src/components/contents/Cart/utils/fleet/getFleetVehicleCartDataFromFetcher";
-import getVehicleCartDataFromFetcher from "@src/components/contents/Cart/utils/vehicle/getVehicleCartDataFromFetcher";
-import { FormType } from "@src/types";
-import { FetcherResponseType, FormFetcherType } from '@src/TO_DELETE';
+import { CartDataType } from '@src/components/contents/Cart/types';
+import getVehicleCartDataFromFetcher from '@src/components/contents/Cart/utils/vehicle/getVehicleCartDataFromFetcher';
+import { FormType } from '@src/types';
+import { FetcherResponseType, FormFetcherType } from '@src/formTypes';
 
 interface Props<T extends FormFetcherType> {
   fetcherData: FetcherResponseType<T>;
@@ -19,13 +18,6 @@ export const getCartDataFromFetcher = <T extends FormFetcherType>({
     case 'autosjednavac': {
       return getVehicleCartDataFromFetcher({
         fetcherData: fetcherData as FetcherResponseType<'autosjednavac'>,
-        formValues,
-      });
-    }
-    case 'autosjednavac-zarazeni-do-flotily': {
-      return getFleetVehicleCartDataFromFetcher({
-        fetcherData:
-          fetcherData as FetcherResponseType<'autosjednavac-zarazeni-do-flotily'>,
         formValues,
       });
     }

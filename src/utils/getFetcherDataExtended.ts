@@ -1,5 +1,5 @@
-import { formStoreInstance } from "@src/store/formStoreInstance";
-import { FetcherResponseType, FormFetcherType } from '@src/TO_DELETE';
+import { formStoreInstance } from '@src/store/formStoreInstance';
+import { FetcherResponseType, FormFetcherType } from '@src/formTypes';
 
 interface Output<T extends FormFetcherType> {
   data?: FetcherResponseType<T>;
@@ -7,18 +7,21 @@ interface Output<T extends FormFetcherType> {
   isFetchLoadingDebounce?: boolean;
 }
 
-export const getFetcherDataExtended = <T extends FormFetcherType>(formType: T): Output<T> => {
+export const getFetcherDataExtended = <T extends FormFetcherType>(
+  formType: T
+): Output<T> => {
   const formInstance = formStoreInstance.get(formType);
 
   if (!formInstance) {
     throw new Error(`Form instance for form type "${formType}" not found.`);
   }
 
-  const { fetcherData, isFetchLoading, isFetchLoadingDebounce } = formInstance.getState() || {};
+  const { fetcherData, isFetchLoading, isFetchLoadingDebounce } =
+    formInstance.getState() || {};
 
   return {
     data: fetcherData,
     isFetchLoading,
-    isFetchLoadingDebounce
+    isFetchLoadingDebounce,
   };
 };

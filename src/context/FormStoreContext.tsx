@@ -1,4 +1,4 @@
-import { FormFetcherType } from '@src/TO_DELETE';
+import { FormFetcherType } from '@src/formTypes';
 import { createFormStore } from '@src/store/createFormStore';
 import { FormStoreReturnType } from '@src/store/types';
 import { SchemaType } from '@src/types';

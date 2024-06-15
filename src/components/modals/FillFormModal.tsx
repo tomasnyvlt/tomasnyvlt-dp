@@ -3,7 +3,7 @@ import { useModal } from 'anolis-ui';
 
 import { FC, useState } from 'react';
 
-import { FetcherResponseType, FormFetcherType } from '@src/TO_DELETE';
+import { FetcherResponseType, FormFetcherType } from '@src/formTypes';
 import setFormValuesFromDataObject from '@src/utils/setFormValuesFromDataObject';
 import dpApiFetch from '@src/utils/TO_DELETE_dpApiFetch';
 import { Basic } from '@src/components/contents/Modal.tsx';
