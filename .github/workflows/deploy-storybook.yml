@@ -18,6 +18,9 @@ jobs:
         with:
           node-version: '18'  # Specify the Node.js version you need
 
+      - name: Configure npm to use GitHub Packages registry
+        run: echo "//npm.pkg.github.com/:_authToken=\${{ secrets.ACTIONS_DEPLOY_TOKEN }}" > ~/.npmrc
+
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
@@ -29,3 +32,10 @@ jobs:
         with:
           branch: gh-pages  # Branch where the Storybook will be deployed
           folder: storybook-static  # Folder with the built Storybook files
+        env:
+         ACTIONS_DEPLOY_TOKEN: ${{ secrets.ACTIONS_DEPLOY_TOKEN }}
+         run: |
+           git config --global user.name "github-actions[bot]"
+           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+           git remote set-url origin https://x-access-token:${{ secrets.ACTIONS_DEPLOY_TOKEN }}@github.com/${{ github.repository }}.git
+           npx gh-pages --dist storybook-static --branch gh-pages
