@@ -43,7 +43,7 @@
     "test:run": "vitest --run",
     "storybook": "storybook dev -p 6006",
     "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN",
-    "build-storybook": "storybook build -o storybook-static && touch ./storybook-static/.nojekyll && gh-pages -d ./storybook-static -t true"
+    "build-storybook": "storybook build -o storybook-static && touch ./storybook-static/.nojekyll"
   },
   "dependencies": {
     "@data-driven-forms/common": ">=3",
