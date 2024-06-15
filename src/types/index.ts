@@ -1,6 +1,6 @@
 import { FormOptions } from '@data-driven-forms/react-form-renderer';
 import { AnyObject } from '@data-driven-forms/react-form-renderer/common-types/any-object';
-import { FetcherResponseType, FormFetcherType } from '@src/TO_DELETE';
+import { FetcherResponseType, FormFetcherType } from '@src/formTypes.ts';
 import { CartFieldsType } from '@src/types/cart';
 import { FormFieldsType } from '@src/types/formFields';
 import { LayoutFieldsType, SectionType } from '@src/types/layout';

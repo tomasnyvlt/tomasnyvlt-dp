@@ -14,7 +14,7 @@ import {
   FetcherRequestType,
   FetcherResponseType,
   FormFetcherType,
-} from '@src/TO_DELETE';
+} from '@src/formTypes.ts';
 import { UserType } from '@src/utils/getActiveUserType';
 import { ValidationErrors } from '@src/utils/getFullErrorKeys';
 import { PreventNextStepConfigType } from '@src/utils/getPreventNextStepConfig';

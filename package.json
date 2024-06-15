@@ -1,6 +1,6 @@
 {
   "name": "@tomasnyvlt/tomasnyvlt-dp",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "type": "module",
   "license": "MIT",
   "main": "dist/index.umd.js",
@@ -42,8 +42,8 @@
     "test": "vitest",
     "test:run": "vitest --run",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
+    "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN",
+    "build-storybook": "storybook build -o storybook-static"
   },
   "dependencies": {
     "@elgorditosalsero/react-gtm-hook": "^2.7.2",
