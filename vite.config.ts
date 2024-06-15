@@ -24,7 +24,7 @@ export default defineConfig({
       external: (s) =>
         [
           ...Object.keys(pkg.dependencies),
-          /// ...Object.keys(pkg.peerDependencies),
+          ...Object.keys(pkg.peerDependencies),
         ].some((dep) => s.startsWith(dep)),
       output: {
         globals: {},
