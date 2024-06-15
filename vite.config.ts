@@ -21,11 +21,11 @@ export default defineConfig({
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: [
-        ...Object.keys(pkg.dependencies || {}),
-        ...Object.keys(pkg.peerDependencies || {}),
-        '@data-driven-forms/react-form-renderer',
-      ],
+      external: (s) =>
+        [
+          ...Object.keys(pkg.dependencies),
+          /// ...Object.keys(pkg.peerDependencies),
+        ].some((dep) => s.startsWith(dep)),
       output: {
         globals: {},
       },
