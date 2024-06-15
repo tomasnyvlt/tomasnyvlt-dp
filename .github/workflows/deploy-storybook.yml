@@ -32,6 +32,7 @@ jobs:
         with:
           branch: gh-pages  # Branch where the Storybook will be deployed
           folder: storybook-static  # Folder with the built Storybook files
+          token: ${{ secrets.ACTIONS_DEPLOY_TOKEN }}
         env:
          ACTIONS_DEPLOY_TOKEN: ${{ secrets.ACTIONS_DEPLOY_TOKEN }}
          run: |
