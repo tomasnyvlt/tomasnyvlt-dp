@@ -5,10 +5,6 @@
 import { FormType } from '@src/types';
 import { TODO } from '@src/utils/todo';
 
-// import {
-//   FleetsAutoSjednavacFetchRequestType,
-//   FleetsAutoSjednavacFetchResponseType,
-// } from '@src/schema/types/vehicle';
 type FleetsAutoSjednavacFetchRequestType = TODO;
 type FleetsAutoSjednavacFetchResponseType = TODO;
 
@@ -29,11 +25,10 @@ type FetcherResponseOptionType = {
 
 export type FormFetcherType = keyof Pick<
   { [K in FormType]: any },
-  'autosjednavac' | 'autosjednavac-zarazeni-do-flotily'
+  'autosjednavac'
 >;
 export const formFetcherType: ReadonlyArray<FormFetcherType> = [
   'autosjednavac',
-  'autosjednavac-zarazeni-do-flotily',
 ];
 
 export type FetcherRequestType<T extends FormFetcherType> =

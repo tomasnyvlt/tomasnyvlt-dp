@@ -3,21 +3,21 @@ import { createGlobalStyle } from '@xstyled/emotion';
 export const GlobalStyles = createGlobalStyle`
   @font-face {
     font-family: 'poppins';
-    src: url('/assets/fonts/poppins-v15-latin-ext_latin-regular.woff2') format('woff2');
+    src: url('/public/assets/fonts/poppins-v15-latin-ext_latin-regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
   }
 
   @font-face {
     font-family: 'poppins';
-    src: url('/assets/fonts/poppins-v15-latin-ext_latin-500.woff2') format('woff2');
+    src: url('/public/assets/fonts/poppins-v15-latin-ext_latin-500.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
   }
 
   @font-face {
     font-family: 'direct-semibold';
-    src: url('/assets/fonts/directyummo-semibold-webfont.woff2') format('woff2');
+    src: url('/public/assets/fonts/directyummo-semibold-webfont.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
   }
