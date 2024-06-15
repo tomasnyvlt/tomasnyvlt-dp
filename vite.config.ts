@@ -25,6 +25,7 @@ export default defineConfig({
         [
           ...Object.keys(pkg.dependencies),
           ...Object.keys(pkg.peerDependencies),
+          '@data-driven-forms/react-form-renderer',
         ].some((dep) => s.startsWith(dep)),
       output: {
         globals: {},
