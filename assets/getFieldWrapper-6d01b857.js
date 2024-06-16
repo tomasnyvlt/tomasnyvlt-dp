@@ -1,0 +1,1 @@
+import{g as o}from"./StorybookProviderDecorator-36d121cb.js";const m=({title:e,sectionContent:n})=>({fields:[{component:"wizard",name:"customWizard",formType:"autosjednavac",fields:[{component:"step",name:"formStep",title:e,fields:[{component:"section",css:{mt:"3rem"},name:o(),fields:n}]}]}]});export{m as g};
